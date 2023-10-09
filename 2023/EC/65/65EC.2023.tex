@@ -238,7 +238,12 @@ H(X) &= \sum_i p_X(i)\log_b\brak{\frac{1}{p_X(i)}} \\
 &= 0.5 + 0.5 + 0.375 + ... + 0.0078125 \\
 &= 1.984375
 \end{align} 
-Now, finding the average using Huffman code, \\
+Now, finding the average using Huffman code,
+We start from a frequency of $1$ and distribute it uniformly.
+The following conventions is used,
+\begin{table}[h!]
+	\input{2023/EC/65/tables/tab_huff2.tex}
+\end{table} \\
 \begin{tikzpicture}[thin,level/.style={sibling distance=50mm/#1}]
 \node[label={\small 0}{ ,a }](a){$\frac{1} {2}$} child
 {
