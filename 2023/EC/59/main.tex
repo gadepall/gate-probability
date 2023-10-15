@@ -1,3 +1,4 @@
+\iffalse
 \documentclass[article,12pt]{IEEEtran}
 \usepackage{setspace}
 \usepackage{gensymb}
@@ -154,6 +155,7 @@ Assignment
 Question 59\\
 Let $X(t)$ be a Gaussian noise with power spectral density $\frac{1}{2} W/Hz$. If $X(t)$ is input to an LTI system with impulse response $e^{-tu(t)}$. The average power of the system is (rounded off to two decimal places).
 \hfill(GATE EC 2023)\\
+\fi
 \solution
 The output power spectral density of a LTI system with impulse response $h(t)$ and input $X(t)$ and input power spectral density $S_X(f)$ is given by:
 \begin{align}
@@ -183,4 +185,3 @@ P_Y(f) &= \int_{-\infty}^{\infty} \abs{H(f)}^2 \cdot S_X(f) \, df \\
 &= \frac{1}{4}
 \end{align}
 Rounded off to two decimal places, the average power of the system output is $0.25 W$.
-\end{document}
