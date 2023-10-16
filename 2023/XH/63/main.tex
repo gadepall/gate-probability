@@ -1,0 +1,170 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+Assignment-7
+%	}
+}
+\author{EE22BTECH11012-A.Chhatrapati}
+
+
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\prt}[2]{\ensuremath{p_{#1}^{\left(#2\right)} }}        % own macro for this question
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\cond}[2]{#1\middle|#2}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand{\myaugvec}[2]{\ensuremath{\begin{amatrix}{#1}#2\end{amatrix}}}
+\providecommand{\rank}{\text{rank}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+	\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+\newcommand*{\comb}[1][-1mu]{\permcomb[#1]{C}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+\providecommand{\diff}[2]{\ensuremath{\frac{d{#1}}{d{#2}}}}
+\providecommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\newcommand\figref{Fig.~\ref}
+\newcommand\tabref{Table~\ref}
+\newcommand{\sinc}{\,\text{sinc}\,}
+\newcommand{\rect}{\,\text{rect}\,}
+\let\vec\mathbf
+
+\textbf{Question 63.2023)}Suppose from the estimation of a linear regression model
+$$Y_i=\beta_0+\beta_1X_i+e_i$$
+the residual sum of squares and the total sum of squares are obtained as 44 and 80, respectively. The value of coefficient of determination is \\ (round off to two decimal places).\\
+\solution
+\fi
+\begin{align}
+Y_i &= \beta_0+\beta_1X_i+e_i
+\end{align}
+Here 
+\begin{table}[ht]
+    \centering
+    \caption{Parameters}
+    \label{table:xh_63.2023}
+\begin{tabular}{|c|c|}
+\hline
+Parameters & Description \\
+\hline
+$Y_i$ & Dependent variable \\
+\hline
+$X_i$ & Independant variables \\
+\hline
+$\beta_0 , \beta_1$ & Constant variables \\ 
+\hline
+$e_i$ & Error term \\
+\hline
+\end{tabular} 
+\end{table}
+\begin{definition}
+Residual sum of squares(RSS): \\
+It measures the extent of variability of observed data not predicted by the regression model. That is it estimates the variance in residual or error term's. 
+\end{definition}
+\begin{align}
+RSS &= \sum \brak{Y_i-\hat{Y}} \\
+    &= \sum e_i^2 \\
+    &= \sum \brak{Y_i-\beta_0-\beta_1X_i}^2\
+\end{align}
+Here $\hat{Y}$ = the value of Y on the line of regression.
+\begin{definition}
+Total sum of squares(TSS): \\
+It measures the amount of variation measures in observed data. It is a measure of deviation from the mean. A low total sum of squares indicates little variation between data sets while a higher one indicates more variation. 
+\end{definition}
+\begin{align}
+TSS &= \sum \brak{Y_i-\bar{Y}}^2
+\end{align}
+where $\bar{Y}$ = Mean of data
+\begin{definition}
+Coeffiecient of determination(\(R^2\)):\\
+It is the proportion of the variance in the dependent variable that is predicted from the independent variable. It indicates the level of variation in the given data set.
+\end{definition}
+\begin{align}
+R^2 &= 1-\frac{RSS}{TSS}\\
+&= 1-\frac{44}{80}\\
+&=0.45
+\end{align}
+45 percent of the variance in the Y variable is predicted from the X variable.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{2023/XH/63/figs/RSS.png}
+\label{fig:xh_63.2023}
+\end{figure}
+
