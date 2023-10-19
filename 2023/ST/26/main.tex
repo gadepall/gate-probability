@@ -1,0 +1,400 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{optidef}
+\usepackage{gvv}
+\usepackage{placeins}
+\newcommand\myeq{\mathrel{\stackrel{\makebox[0pt]{\mbox{\normalfont\tiny iid}}}{\sim}}}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+	Solution to Gate ST 2023 Q 26
+%	}
+}
+\author{ Mayank Gupta %$^{*}$% <-this % stops a space
+%	\thanks{*The author is with the Department
+%		of Electrical Engineering, Indian Institute of Technology, Hyderabad
+%		502285 India e-mail:  gadepall@iith.ac.in. All content in this manual is released under GNU GPL.  Free and open source.}		
+}
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you ths:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitlei
+Question : Consider the following regression model
+\begin{center}
+	$y_{k} = \alpha_{0} + \alpha_{1} \log_{e}k + \epsilon_{k}, \qquad k = 1,2,…,n,$\\
+\end{center}
+where $\epsilon_{k}$'s are independent and identically distributed random variables each
+having probability density function $ f\brak{x} = \frac{1}{2} e^{-|x|}, x \in \mathbb{R}$. Then which one of
+the following statements is true? 
+\begin{enumerate}[label=(\Alph*)]
+	\item The maximum likelihood estimator of $\alpha_{0}$ does not exist
+	\item The maximum likelihood estimator of $\alpha_{1}$ does not exist
+	\item The least squares estimator of $\alpha_{0}$ exists and is unique
+	\item The least squares estimator of $\alpha_{1}$ exists, but it is not unique
+\end{enumerate}
+\fi
+\solution
+\begin{align}
+	f(\epsilon_{k}) &= \frac{1}{2} e^{-|\epsilon_{k}|}\\
+	\text{Likelihood function}: f(\epsilon_{1}\epsilon_{2}....\epsilon_{n}) &= \prod_{k = 1}^{n} f(\epsilon_{k})\\
+	L     &= \prod_{k = 1}^{n}\frac{1}{2}e^{-|\epsilon_{k}|}\\
+L_{1} = \ln L &= \ln\brak{\prod_{k = 1}^{n}\frac{1}{2}e^{-|\epsilon_{k}|}}\\
+	      &= \sum_{k = 1}^{n} \ln\brak{\frac{1}{2}e^{-|\epsilon_{k}|}}\\
+	      &= \sum_{k = 1}^{n} \brak{-\ln 2 -|y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k|}\\
+	      &= -n\ln 2 -\sum_{k = 1}^{n} \brak{|y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k|}\\  
+	L_{1} &= \text{function of }\alpha_{0}, \alpha_{1}
+\end{align}
+\begin{enumerate}
+	\item Maximum likelihood estimator\\
+	We need to find the value of $\alpha_{0}$ and $\alpha_{1}$ which will maximise the value of $L_{1}$ i.e. the value of 
+	$\alpha_{0}$ and $\alpha_{1}$ which will minimise the value of $\sum_{k = 1}^{n}|y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k|$
+		\begin{enumerate}
+\item With respect to $\alpha_{0}$
+\begin{enumerate}
+	\item For $y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k > 0$
+\begin{mini*}|s|
+{\alpha_{0}}{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}
+{}{}
+\addConstraint{\alpha_{0}\leq y_{k}-\alpha_{1}\log_{e}k}{}
+\end{mini*}
+Using Lagrange multiplier method
+\begin{align}
+	L\brak{\lambda} &= y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k - \lambda(\alpha_{0}-y_{k}+\alpha_{1} \log_{e}k)\\
+	\frac{\partial L}{\partial \alpha_{0}} &= -1-\lambda = 0\\
+	\frac{\partial L}{\partial \lambda} &= y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k = 0\\
+	\lambda &= -1\\
+	\alpha_{0} &= y_{k} - \alpha_{1} \log_{e}k
+\end{align}
+	\item For $y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k < 0$
+\begin{mini*}|s|
+{\alpha_{0}}{-\brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}}
+{}{}
+\addConstraint{\alpha_{0}\geq y_{k}-\alpha_{1}\log_{e}k}{}
+\end{mini*}
+Using Lagrange multiplier method
+\begin{align}
+	L\brak{\lambda} &= -\brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k} - \lambda(\alpha_{0}-y_{k}+\alpha_{1} \log_{e}k)\\
+        \frac{\partial L}{\partial \alpha_{0}} &= 1-\lambda = 0\\
+        \frac{\partial L}{\partial \lambda} &= y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k = 0\\
+        \lambda &= 1\\
+        \alpha_{0} &= y_{k} - \alpha_{1} \log_{e}k
+\end{align}
+As value of $\alpha_{0}$ matches for both cases of modulus\\
+$\therefore$ The maximum likelihood estimator of $\alpha_{0}$ exist
+\end{enumerate}
+\item With respect to $\alpha_{1}$
+	\begin{enumerate}
+	\item For $y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k > 0$
+\begin{mini*}|s|
+{\alpha_{1}}{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}
+{}{}
+	\addConstraint{\alpha_{1}\leq \frac{y_{k}-\alpha_{0}}{\log_{e}k}}{}
+\end{mini*}
+Using Lagrange multiplier method
+\begin{align}
+	L\brak{\lambda} &= y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k - \lambda \brak{\alpha_{1}-\frac{y_{k}-\alpha_{0}}{\log_{e}k}}\\
+        \frac{\partial L}{\partial \alpha_{1}} &= -\log_{e}k -\lambda = 0\\
+	\frac{\partial L}{\partial \lambda} &= -\brak{\alpha_{1}-\frac{y_{k}-\alpha_{0}}{\log_{e}k}} = 0\\
+        \lambda &= -\log_{e}k\\
+	\alpha_{1} &= \frac{y_{k} - \alpha_{0}}{\log_{e}k}
+\end{align}
+	\item For $y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k < 0$
+\begin{mini*}|s|
+{\alpha_{1}}{-\brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}}
+{}{}
+        \addConstraint{\alpha_{1}\geq \frac{y_{k}-\alpha_{0}}{\log_{e}k}}{}
+\end{mini*}
+Using Lagrange multiplier method
+\begin{align}
+	L\brak{\lambda} &= -\brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k} - \lambda \brak{\alpha_{1}-\frac{y_{k}-\alpha_{0}}{\log_{e}k}}\\
+        \frac{\partial L}{\partial \alpha_{1}} &= \log_{e}k -\lambda = 0\\
+        \frac{\partial L}{\partial \lambda} &= -\brak{\alpha_{1}-\frac{y_{k}-\alpha_{0}}{\log_{e}k}} = 0\\
+        \lambda &= \log_{e}k\\
+        \alpha_{1} &= \frac{y_{k} - \alpha_{0}}{\log_{e}k}
+\end{align}
+As value of $\alpha_{1}$ matches for both cases of modulus\\
+$\therefore$ The maximum likelihood estimator of $\alpha_{1}$ exist\\
+\end{enumerate}
+$\therefore$ Option \brak{A} and \brak{B} are incorrect\\
+\item Least square estimator\\
+The least square estimator of $\alpha_{0}$ and $\alpha_{1}$ is $\tilde{\alpha_{0}}$ and $\tilde{\alpha_{1}}$ which will minimise
+\begin{table}[!htb]
+	\input{2023/ST/26/tables/table.tex}
+	\caption{Variables used}
+	\label{table_gate23_st_26}
+\end{table}
+\begin{align}
+	Q\brak{\alpha_{0},\alpha_{1}} &=  \sum_{k = 1}^{n} \brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}^2\\
+\frac{\partial Q}{\partial \alpha_{0}} &= -2 \sum_{k = 1}^{n} \brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k} = 0\\
+	\sum_{k = 1}^{n} \brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k} &= 0\\
+	n\bar{y} - n\alpha_{0} - \alpha_{1}n\bar{x} &= 0 \\%,\quad \text{where } \bar{x} = \frac{1}{n} \sum_{k = 1}^{n}\log_{e}k,\quad \bar{y} = \frac{1}{n} \sum_{k = 1}^{n}y_{k}\\
+	\implies \tilde{\alpha_{0}} &= \bar{y} - \tilde{\alpha_{1}}\bar{x}\\
+	\frac{\partial Q}{\partial \alpha_{1}} &= -2 \sum_{k = 1}^{n} \brak{y_{k}-\alpha_{0}-\alpha_{1} \log_{e}k}\log_{e}k = 0\\
+	\implies \tilde{\alpha_{1}} &= \frac{\sum_{k = 1}^{n}\brak{\log_{e}k-\bar{x}}\brak{y_{k}-\bar{y}}}{\sum_{k = 1}^{n}\brak{\log_{e}k-\bar{x}}^2}
+\end{align}
+$\therefore$ Least square estimator of $\alpha_{0}$ and $\alpha_{1}$ exists and are unique\\
+$\therefore$ Option \brak{C} is correct and \brak{D} is incorrect\\
+\item Steps for simulation the given distribution whose 
+	probability density function is $ f\brak{x} = \frac{1}{2} e^{-|x|}$
+\begin{enumerate}
+\item Write a function cdf for calculating the cdf of any random variable\\
+	 \begin{align}
+  p_X(x) &= 
+  \begin{cases}
+          \frac{1}{2} e^{x} & x \le 0
+  \\
+          \frac{1}{2} e^{-x} &  x > 0
+  \end{cases}
+  \end{align}
+
+  \begin{align}
+  F_X(x) &= 
+  \begin{cases}
+	  \int_{-\infty}^{x} \brak{\frac{1}{2} e^{x}} dx  & x \le 0
+  \\
+	  \int_{-\infty}^{0} \brak{\frac{1}{2} e^{x}} dx + \int_{0}^{x} \brak{\frac{1}{2} e^{-x}} dx &  x > 0
+  \end{cases}
+  \end{align}
+
+  \begin{align}
+  F_X(x) &= 
+  \begin{cases}
+	  \frac{1}{2} e^{x} & x \le 0
+  \\
+	  \frac{1}{2} \brak{2-e^{-x}} &  x > 0
+  \end{cases}
+  \end{align}
+\item Declare a function inverse cdf \brak{I\brak{u}} such that its input is any random number 
+	and output is random variable whose cdf equals that of the given distribution\\
+	For x $\le$ 0
+		\begin{align}
+			u &= \frac{1}{2} e^{x}\\
+			e^{x} &= 2u\\
+			x &= \ln{2u}\\
+			\because x \le 0\\
+			u \le 0.5
+		\end{align}
+	For x $>$ 0
+		\begin{align}
+			u &= \frac{1}{2} \brak{2-e^{-x}}\\
+			2-e^{-x} &= 2u\\
+			e^{-x} &= 2-2u\\
+			x &= -\ln \brak{2-2u}\\
+			\because x > 0\\
+			u > 0.5
+		\end{align}
+  \begin{align}
+  I\brak{u} &=
+  \begin{cases}
+	  \ln\brak{2u} & u \le 0.5
+  \\
+	  -\ln \brak{2-2u} &  u > 0.5
+  \end{cases}
+  \end{align}
+\item Define three arrays random\textunderscore{vars} , cdf\textunderscore{values}
+	, theoretical\textunderscore{cdf}\textunderscore{values}
+	to store random variables, simulated cdf values and theoretical cdf values
+\item Generate random numbers using rand() and calling inverse cdf funtion to generate our random variable
+\item Calling cdf function to calculate the cdf of the generated random variable
+\item Storing the random variable,theoretical cdf and generated cdf into their respective arrays
+\item Storing the data of these three array into a .dat file
+\item Plotting these .dat file in python
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
