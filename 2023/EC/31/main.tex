@@ -1,4 +1,4 @@
- 
+\iffalse 
  \documentclass[journal,12pt,onecolumn]{IEEEtran}
 \usepackage{setspace}
 \usepackage{gensymb}
@@ -109,15 +109,15 @@ columns=fullflexible
 \maketitle
 \textbf{Question EC 31 2023}\\
 The signal-to-noise ratio (SNR) of an ADC with a full-scale sinusoidal input is given to be 61.96 dB. The resolution of the ADC is \hfill{GATE EC 2023}
-
-\textbf{Solution:}
+\fi
+\solution
 \begin{table}[H]
-\input{Table/a.tex}
+\input{2023/EC/31/Table/a.tex}
 \label{table:Gate.31.2023.0}
 \end{table}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{Graph/a.png}
+  \includegraphics[width=1\textwidth]{2023/EC/31/Graph/a.png}
   \caption{Quantization of Sinusoidal Signal}
   \label{fig:Gate.31.2023.1}
 \end{figure}
@@ -170,7 +170,7 @@ p_Y(y) =
 \end{align}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\columnwidth]{Graph/b.png}
+  \includegraphics[width=0.7\columnwidth]{2023/EC/31/Graph/b.png}
   \caption{plot of pdf of Quantization Error}
   \label{fig:Gate.31.2023.2}
 \end{figure}
@@ -227,4 +227,4 @@ Simulation Steps :- \\
 \item Compare the calculated SNR to the target SNR\_dB, and when it's within a specified tolerance, print the corresponding number of bits required for quantization.\\
 \item The program breaks the loop and exits after finding the number of bits that achieves the target SNR\_dB.
 \end{enumerate}
-\end{document}
+
