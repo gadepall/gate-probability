@@ -1,0 +1,394 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{gvv}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+Solution of GATE-ST 2023 Q58
+%	}
+}
+\author{ SUJAL GUPTA - EE22BTECH11052
+}	
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+Consider the following regression model
+\begin{align}
+y_t={\alpha}_0+{\alpha}_1t+{\alpha}_2t^2+\epsilon_{t}, \qquad t = 1,2,…,n
+\end{align}
+where ${\alpha}_0$ , ${\alpha}_1$ and ${\alpha}_2$ are unknown parameters and $\epsilon_{t}$’s are independent and identically distributed random variables each having $\gauss{\mu}{1}$ distribution with $\mu$ unknown. Then which of the following statements is/are true?
+\begin{enumerate}
+\item{There exists an unbiased estimator of ${\alpha}_1$}
+\item{There exists an unbiased estimator of ${\alpha}_2$}
+\item{There exists an unbiased estimator of ${\alpha}_0$}
+\item{There exists an unbiased estimator of ${\mu}$}
+\end{enumerate}
+\solution
+Assuming that the model is 
+\begin{align}
+y_t={\alpha}_0+{\alpha}_1t+{\alpha}_2t^2+\epsilon_{t}
+\end{align}
+\begin{align}
+\begin{bmatrix} 
+	y_1  \\
+	y_2 \\
+	\vdots\\
+	y_n  \\
+\end{bmatrix}&=\begin{bmatrix} 
+	1&A_{11}&A_{12}  \\
+	1&A_{21}&A_{22}\\
+	\vdots\\
+	1&A_{n1}&A_{n2} \\
+\end{bmatrix} \begin{bmatrix} 
+	{\alpha}_0  \\
+	{\alpha}_1 \\
+	{\alpha}_2\\
+\end{bmatrix}+\begin{bmatrix} 
+	\epsilon_{1}  \\
+	\epsilon_{2}  \\\vdots\\\epsilon_{n}  \\
+\end{bmatrix}
+\end{align}
+Finding mean of the ${\vec{y}}$,
+\begin{align}
+\vec{y}=\vec{A}\mtx{\vec{a}}+\boldsymbol{\epsilon}
+\end{align}
+\begin{align}
+E(\vec{y})&=E(\vec{A}\mtx{\vec{a}}+\boldsymbol{\epsilon})\\
+&=\vec{A}\vec{a}+E(\boldsymbol{\epsilon})
+\end{align}
+\begin{align}
+E\brak{\boldsymbol{{\epsilon}}} = \begin{bmatrix}
+E\brak{{\epsilon}_1} \\%[5pt]
+E\brak{{\epsilon}_2} \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+E\brak{{\epsilon}_n}
+\end{bmatrix}&=\begin{bmatrix}
+\mu \\%[5pt]
+\mu \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+\mu
+\end{bmatrix}\\
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}&=\mu \begin{bmatrix}
+1 \\%[5pt]
+1 \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+1
+\end{bmatrix}
+\end{align}
+Let $\vec{A}_i $ represent the $i^{th}$ row of $\vec{A}$
+\begin{align}
+\textrm{Cov}({y}_i,{y}_j)&=E\brak{\brak{{y}_i-E(y_i)}\brak{{y}_j-E(y_j)}}\\
+&=E\brak{({\vec{A}}_i\vec{a}+{\epsilon}_i-E({\vec{A}}_i\vec{a}+{\epsilon}_i))({\vec{A}}_j\vec{a}+{\epsilon}_j-E({\vec{A}}_j\vec{a}+{\epsilon}_j))}\\
+&=E\brak{({\epsilon}_i-E({\epsilon}_i))({\epsilon}_j-E({\epsilon}_j))}\\
+&=\textrm{Cov}({\epsilon}_i,{\epsilon}_j)
+\end{align}
+\begin{align}
+ \mathbf{C_{\vec{y}}}&=\mathbf{C_{\boldsymbol{\epsilon}}}
+ \end{align}
+ Since the ${\epsilon}_i$'s are independent and identical vectors, 
+\begin{align}
+\textrm{Cov}({\epsilon}_i,{\epsilon}_j)=0 , \qquad \forall i\neq j
+\end{align}
+\begin{align}
+\textrm{Var}({\epsilon}_i)=1 , \qquad \forall 1\leq i\leq n
+\end{align}
+\begin{align}
+ \mathbf{C_{\vec{y}}}&=I_{n\times n}
+ \end{align}
+\begin{align}
+\vec{y} \sim \gauss{\vec{A}\vec{a}+{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}{I}
+\end{align}
+\begin{align}
+p_{\vec{y}}= \frac{1}{\sqrt{ (2\pi)^n \det( \mathbf{C_{\vec{y}}})}} \exp \frac{-({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{\mathbf{C_{\vec{y}}}^{-1}}{({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})}}{2}
+\end{align}
+where $ \mathbf{C_{\vec{y}}} $ is the covariance matrix for $\vec{y}\\$
+% Here the variable $y_i$ is distributed as \begin{align}\vec{y} \sim \gauss{AVar(\boldsymbol{x})+I}{AE(\boldsymbol{x})+E({\epsilon})}\end{align}
+The maximum likelihood function can be written as:
+\begin{align}
+L\brak{\vec{y}}&=\frac{1}{{(2\pi)}^{\frac{n}{2}}}e^\frac{-({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{({\vec{y}-\vec{A}\vec{a}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}})}}{2}\\
+\ln L\brak{\vec{y}}&=-\frac{n}{2}\ln(2\pi)-\dfrac12 ({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})^T{({\vec{y}-{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}\vec{a})}
+\end{align}
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=\frac{\partial (-\vec{y}^T\vec{A}\vec{a}-\vec{a}^T\vec{A}^T\vec{y}+\vec{a}^T\vec{A}^T\vec{A}\vec{a}+\vec{a}^T\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}+{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}^T\vec{A}\vec{a})}{\partial \vec{a}}\\
+&=-2\vec{A}^T\vec{y}+2\vec{A}^T\vec{A}\vec{a}+2\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
+\end{align}
+The normal equation is
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{a}}&=0\\
+\vec{a}&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}
+\end{align}
+For unbiased estimator, 
+\begin{align}
+E\brak{\vec{a}}=\vec{a}
+\end{align}
+\begin{align}
+E\brak{\vec{a}}&=E\brak{\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{y}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}}\\
+&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^TE(\vec{y})-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
+&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\brak{\vec{A}\vec{a}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}-\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
+&=\brak{{\vec{A}}^T\vec{A}}^{-1}\brak{{\vec{A}}^T\vec{A}}\vec{a}\\
+&=\vec{a}
+\end{align}
+Hence there exist unbiased estimator for ${\alpha}_0, {\alpha}_1, {\alpha}_2\\$
+For Maximum Likelihood Estimator of $\mu$
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=\frac{\partial (-\vec{y}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}-\vec{a}^T\vec{A}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}\vec{y}+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}\vec{A}\vec{x}+{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}^T\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}})}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}\\
+&=-2\vec{y}+2\vec{A}\vec{a}+2\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
+\end{align}
+The normal equation is
+\begin{align}
+\frac{\partial \ln L\brak{\vec{y}}}{\partial \vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=0\\
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}=\vec{y}-\vec{A}\vec{a}
+\end{align}
+\begin{align}
+E\brak{\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}}&=E\brak{\vec{y}-\vec{A}\vec{a}}\\
+&=E\brak{\vec{y}}-\vec{A}\vec{a}\\
+&=E\brak{\boldsymbol{{\epsilon}}}\\
+&=\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}
+\end{align}
+Since,
+\begin{align}
+\vec{\boldsymbol{\mu}}_{\boldsymbol{{\epsilon}}}&=\mu \begin{bmatrix}
+1 \\%[5pt]
+1 \\%[5pt]
+. \\[-10pt]
+. \\[-10pt]
+. \\[5pt]
+1
+\end{bmatrix}
+\end{align}
+Hence there exists an unbiased estimator for $\mu$ as well.
+\\
+\\
+Simulation in C
+We get the following values:\\
+\begin{table}[h!]
+ \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    Parameter & True Value & Simulated Value & Average Bias\\
+    \hline
+    $\alpha_0$ & 3 & 2.983275 & 0.016725\\
+    \hline
+    $\alpha_1$ & 2 & 2.002000 & -0.002000\\
+    \hline
+    $\alpha_2$ & 0.5 & 0.500500 & -0.000500\\
+    \hline
+    $\mu$ & 0.1 & 0.1 & 0\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \caption{Simulation results}
+    \label{table:1}
+  %\label{tab:gate/ST/18/1} 
+\end{table}
+\begin{enumerate}
+\item {Defining some arbitrary values for ${\alpha}_0, {\alpha}_1, {\alpha}_2$ and $\mu$}
+\item {Generating the epsilon using Box-Muller method and using it to find $y_i$}
+\item {Generating dependent variable $y_i$ using $y_i={\alpha}_0+{\alpha}_1i+{\alpha}_2i^2+\epsilon_{i}, \qquad i = 1,2,…,n$}
+\item {Storing the generated data into a $generated_{-}data.dat$ file.}
+\item {$\epsilon_{i}$ is generated as a gaussian variable	}
+\item {Defining 4 variables $beta_0hat, beta_1hat, beta_2hat$ and $mu-hat$ for string the estimated values}
+\item {Defining 4 variables $beta_0bias, beta_1bias, beta_2bias$ and $mu-bias$ for keeping track of the deviation of the estimated values from the true values}
+\item {Using nested for loops to ensure that average bias for each coefficient is calculated over multiple simulations}
+\item {Dividing the total bias by the number of simulations to get the average bias per simulation}
+\end{enumerate}
+
+
+% To find the maximum log likelihood
+% \begin{align}
+% \frac{\partial lnL\brak{\mtx{\boldsymbol{\epsilon}}}}{\partial \mtx{\boldsymbol{\epsilon}}}&={A}^TA\boldsymbol{x}-{A}^T\vec{y}\\
+% &=0\\
+% {A}^TA\mtx{\boldsymbol{x}}&={A}^T\vec{y}\\
+% \boldsymbol{\hat{x}} &= (\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T\mathbf{y}
+% \end{align}
+% Let $B$ be the set of all possible vectors $\alpha$. The object is to find a vector $\alpha$ from $B$ that minimizes the sum of squared deviations of $\epsilon$'s i.e.,
+% \begin{align}
+% S(\vec{\alpha})&=\sum_{t = 1}^{n} {\epsilon}^2\\
+% &={\epsilon}^{T}{\epsilon}\\
+% &=\brak{\vec{y}-X\vec{\alpha}}^{T}\brak{\vec{y}-X\vec{\alpha}}
+% \end{align}
+% Differentiate $S(\alpha)$ wrt $\alpha$
+% \begin{align}
+% \frac{\partial S\brak{\vec{\alpha}}}{\partial \vec{\alpha}}&=2{X}^TX\alpha-2{X}^T\vec{y}
+% \end{align}
+% The normal equation is
+% \begin{align}
+% \frac{\partial S\brak{\vec{\alpha}}}{\partial \vec{\alpha}}&=0\\
+% {X}^TX\vec{\alpha}&={X}^T\vec{y}
+% \end{align}
+\end{document}
