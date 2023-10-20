@@ -3,12 +3,13 @@
 \contentsline {chapter}{\numberline {1}Axioms}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Distributions}{3}{chapter.2}%
 \contentsline {chapter}{\numberline {3}Conditional Probability}{29}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Moments}{31}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Random Algebra}{35}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Hypothesis Testing}{39}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Bivariate Random Variables}{55}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Random Processes}{57}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Convergence}{59}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Information Theory}{69}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Markov chain}{79}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Estimation}{81}{chapter.12}%
+\contentsline {chapter}{\numberline {4}Random Variable}{31}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Moments}{33}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Random Algebra}{45}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Hypothesis Testing}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Bivariate Random Variables}{63}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Random Processes}{65}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Convergence}{67}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Information Theory}{77}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Markov chain}{87}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Estimation}{89}{chapter.13}%
