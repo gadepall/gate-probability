@@ -219,11 +219,11 @@ Tutorial for Huffman code generation
 %\section{Chemistry}
 %\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
-\lstinputlisting{2023/EC/65/codes/huff_gen.py}
+\lstinputlisting{/home/jay/Desktop/gate-probability/2023/EC/65/codes/huff_gen.c}
 \begin{enumerate}
-\item define all the parameter for the huffman tree i.e \textbf{class node:}. Also rearrange the frequency in ascending order
-\item Using a function \textbf{printNodes(node,val='')} to create the tree print the huffman code.
-\item \textbf{while len(nodes)>1} is loop to assign values to the node from the previous step
-\item finally printing the code.
+\item for generating the huffman code \textbf{\#include "heaplib.h"} library has to be added with file 'heaplib.h' in the .c file location
+\item define all the parameter for the huffman tree i.e \textbf{char arr[] and double freq[]}
+\item if the frequency are less in fractions then frequency has to be change in to whole numbers. 
+\item \textbf{HuffmanCode()} function is called which will print the code
 \end{enumerate}
 \end{document}
