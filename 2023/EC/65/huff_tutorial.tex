@@ -1,4 +1,3 @@
-\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,Twocolumn]{IEEEtran}
@@ -101,7 +100,7 @@
 
 \title{
 %	\logo{
-GATE-EC2023
+Tutorial for Huffman code generation
 %	}
 }
 \author{ Jay Vikrant EE22BTECH11025
@@ -220,73 +219,11 @@ GATE-EC2023
 %\section{Chemistry}
 %\begin{enumerate}[label=\arabic*.,ref=\thesection.\theenumi]
 %\numberwithin{equation}{enumi}
-\textbf{Q65EC.2023:}The frequency of occurrence of 8 symbols (a-h) is shown in the table below. A
-symbol is chosen and it is determined by asking a series of “yes/no” questions which
-are assumed to be truthfully answered. The average number of questions when asked
-in the most efficient sequence, to determine the chosen symbol, is \\
-\begin{table}[h]
-	\input{2023/EC/65/tables/table.tex}
-\end{table} \\
-\textbf{Solution:}
-\fi
-\begin{table}[h]
-	\input{2023/EC/65/tables/tab_ans.tex}
-\end{table} 
-\begin{align}
-H(X) &= \sum_i p_X(i)\log_b\brak{\frac{1}{p_X(i)}} \\
-&= \frac{1}{2}\log_2\brak{2} + \frac{1}{4}\log_2\brak{4} + ... + \frac{1}{128}\log_2\brak{128} \\
-&= 0.5 + 0.5 + 0.375 + ... + 0.0078125 \\
-&= 1.984375
-\end{align} 
-Now, finding the average using Huffman code,
-We start from a frequency of $1$ and distribute it uniformly.
-The following conventions is used,
-\begin{table}[h!]
-	\input{2023/EC/65/tables/tab_huff2.tex}
-\end{table} \\
-\begin{tikzpicture}[thin,level/.style={sibling distance=50mm/#1}]
-\node[label={\small 0}{ ,a }](a){$\frac{1} {2}$} child
-{
-    node[label={\small 0}](b){$\frac{1}{4}$} child
-    {
-        node[label={\small 0}](c){$\frac{1}{8}$} child
-        {
-            node[label={\small 0}](d){$\frac{1}{16}$} child
-            {
-                node[label={\small 0}](e){$\frac{1}{32}$} child
-                {
-                		node[label={\small 0}](f){$\frac{1}{64}$} child
-            			{
-            				node[label={\small 0}{,h }](g){$\frac{1}{128}$}
-            				}	
-            			child{node[label={\small 1}{,g }](h){$\frac{1}{128}$}}
-                }
-                child
-            {
-                node[label={\small 1}{,f }] {$\frac{1}{64}$} 
-            }                
-            }
-            child
-            {
-                node[label={\small 1}{ ,e }] {$\frac{1}{32}$}
-            }
-        }
-        child
-        {
-            node[label={\small 1}{ ,d }] {$\frac{1}{16}$}
-        }
-    }
-    child
-    {
-        node[label={\small 1}{ ,c }] {$\frac{1}{8}$}
-    }
-}
-child{
-    node[label={\small 1}{ ,b }]{$\frac{1}{4}$}};
-\end{tikzpicture} \\
-Using the above binary table following code is generated;
-\begin{table}[h]
-	\input{2023/EC/65/tables/tab_huff.tex}
-	\caption{Huffman table}
-	The average number of question $=$ Weighted path length $= 1.9844$
-\end{table} 
+\lstinputlisting{2023/EC/65/codes/huff_gen.py}
+\begin{enumerate}
+\item define all the parameter for the huffman tree i.e \textbf{class node:}. Also rearrange the frequency in ascending order
+\item Using a function \textbf{printNodes(node,val='')} to create the tree print the huffman code.
+\item \textbf{while len(nodes)>1} is loop to assign values to the node from the previous step
+\item finally printing the code.
+\end{enumerate}
+\end{document}

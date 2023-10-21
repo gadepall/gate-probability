@@ -1,4 +1,6 @@
 import heapq
+#Jay Vikrant 
+#EE23210, 21 october 2023
 
 class node:
 	def __init__(self, freq, symbol, left=None, right=None):
@@ -16,24 +18,23 @@ class node:
 
 		# tree direction (0/1)
 		self.huff = ''
-
+    #arranging the frequency in ascending order
 	def __lt__(self, nxt):
 		return self.freq < nxt.freq
 
 
-# utility function to print huffman
+# function to allot and print code for each character in the tree
 def printNodes(node, val=''):
 
 	newVal = val + str(node.huff)
 
-	# if node is not an edge node
-	# then traverse inside it
+	# if node is not an edge node then traverse inside it
 	if(node.left):
 		printNodes(node.left, newVal)
 	if(node.right):
 		printNodes(node.right, newVal)
 
-		# if node is edge node then
+	# if node is edge node then give 
 	if(not node.left and not node.right):
 		print(f"{node.symbol} -> {newVal}")
 
@@ -44,8 +45,9 @@ chars = ['a', 'b', 'c', 'd', 'e', 'f','g','h']
 # frequency of characters
 freq = [1/2,1/4,1/8,1/16,1/32,1/64,1/128,1/128]
 
-# list containing unused nodes
+# empty nodes
 nodes = []
+# converting characters and frequencies into huffman tree nodes
 for x in range(len(chars)):
 	heapq.heappush(nodes, node(freq[x], chars[x]))
 
@@ -59,10 +61,10 @@ while len(nodes) > 1:
 	left.huff = 1
 	right.huff = 0
 
-	# combine the 2 smallest nodes to create
-	# new node as their parent
+	# combine the 2 smallest nodes to create a new node as their parent
 	newNode = node(left.freq+right.freq, left.symbol+right.symbol, left, right)
 	heapq.heappush(nodes, newNode)
 
+#printing the huffman code 
 printNodes(nodes[0])
 
