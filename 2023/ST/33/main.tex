@@ -1,0 +1,370 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,bm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{gvv}
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}  
+\usepackage{float}                                         
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+Question ST 33.2023
+%	}
+}
+\author{Gagan Singla - EE22BTECH11021}	
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+Question: Let $\{W_t\}_{t \geq 0}$ be a standard Brownian motion. Then $E\brak{\left.{W_4}^2\right | W_2=2}$ in integer equals
+\fi
+\solution
+\begin{table}[H]
+\input{/home/quantum_fusion/gate-probability/2023/ST/33/tables/table.tex}
+\end{table}
+In standard brownian motion, 
+\begin{align}
+W_i &\sim N\brak{0,i}\\
+Cov\brak{W_i,W_j} &= \min\brak{i,j} 
+\end{align}
+Now, we know that,
+\begin{align}
+E\brak{\left.Y^2\right | X} = Var\brak{\left.Y\right | X} + \brak{E\brak{\left.Y\right | X}}^2 \label{33.2023.1}
+\end{align}
+$X$ and $Y$ can be represented as:
+\begin{align}
+X &= \sigma_XZ_1 + \mu_X\\
+Y &= \sigma_Y\brak{{\rho}Z_1 + \sqrt{1-{\rho}^2}Z_2} + \mu_Y
+\end{align}
+where $Z_1$ and $Z_2$ are normal distributions.
+\begin{align}
+Z_1, Z_2 \sim N\brak{0,1}
+\end{align}
+Writing the above equations in matrix form,
+\begin{align}
+\myvec{X\\Y} = 
+\begin{bmatrix}
+    \sigma_X & 0 \\
+    \sigma_Y\rho & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}
+\myvec{Z_1\\Z_2} + \myvec{\mu_X\\\mu_Y}
+\end{align}
+This can be represented as,
+\begin{align}
+\vec{x} = A\vec{z} + \bm{\mu}
+\end{align}
+Taking expectation both sides,
+\begin{align}
+E\brak{\vec{x}} &= E\brak{A\vec{z} + \bm{\mu}}\\
+		&= AE\brak{\vec{z}} + E\brak{\bm{\mu}}\\
+		&= \bm{\mu}
+\end{align}
+We know that covariance matrix for $X$ and $Y$ is given by:
+\begin{align}
+\sigma_\vec{z} &= E\brak{\brak{\vec{x}-\vec{\mu}}\brak{\vec{x}-\vec{\mu}}^T}\\
+	      &= E\brak{\brak{A\vec{z}}\brak{A\vec{z}}^T}\\
+	      &= E\brak{A\vec{z}\vec{z}^TA^T}\\
+	      &= AE\brak{\vec{z}\vec{z}^T}A^T
+\end{align}
+Multiplying $\vec{z}$ and $\vec{z}^T$ we get,
+\begin{align}
+\vec{z}\vec{z}^T &= \myvec{Z_1\\Z_2}\myvec{Z_1&Z_2}\\
+		 &= \myvec{{Z_1}^2&Z_1Z_2\\Z_1Z_2&{Z_2}^2}\label{33.2023.2}
+\end{align}
+We know that, 
+\begin{align}
+Var\brak{Z_1} &= E\brak{\brak{Z_1-\mu}^2}\\
+E\brak{Z_1^2} &= 1
+\end{align}
+Same goes for $Z_2$ as $Z_1$ and $Z_2$ are both normal distributions.\\ 
+Taking expectation both sides in equation \eqref{33.2023.2},
+\begin{align}
+E\brak{\vec{z}\vec{z}^T} &= \myvec{E\brak{Z_1^2}&E\brak{Z_1Z_2}\\E\brak{Z_1Z_2}&E\brak{Z_2^2}}\\
+			 &= \myvec{1&0\\0&1}
+\end{align}
+Hence,
+\begin{align}
+\sigma_\vec{z} &= AA^T\\
+	      &= 
+\begin{bmatrix}
+    \sigma_X & 0 \\
+    \sigma_Y\rho & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}
+\begin{bmatrix}
+    \sigma_X & \sigma_Y\rho \\
+    0 & \sigma_Y\sqrt{1-{\rho}^2} \\
+\end{bmatrix}\\
+	      &= 
+\begin{bmatrix}
+\brak{\sigma_X}^2 & \sigma_X\sigma_Y\rho \\
+\sigma_X\sigma_Y\rho & \brak{\sigma_Y}^2 \\
+\end{bmatrix}
+\end{align}
+The Co-Relation Coefficiant is given by:
+\begin{align}
+\rho = \frac{Cov\brak{X,Y}}{\sqrt{Var\brak{X}Var\brak{Y}}}  
+\end{align}
+Substituting value of $Z_1$ in $Y$,
+\begin{align}
+Y &= \sigma_Y\rho\brak{\frac{X - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y
+\end{align}
+This an equation of $Y$ in terms of $X$. All the terms except $Z_2$ are constants. Taking expectation on both sides, 
+\begin{align}
+E\brak{\left.Y\right | X=x} &= E\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y}\\
+			    &= E\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \mu_Y} + E\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}\\
+			    &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X} + \sigma_Y\sqrt{1 - {\rho}^2}E\brak{Z_2}
+\end{align}
+Now for variance,
+\begin{align}
+Var\brak{\left.Y\right | X=x} &= Var\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \sigma_Y\sqrt{1 - {\rho}^2}Z_2 + \mu_Y}\\
+			      &= Var\brak{\sigma_Y\rho\brak{\frac{x - \mu_X}{\sigma_X}} + \mu_Y} + Var\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}
+\end{align}
+Variance of constants terms is 0.
+\begin{align}		      
+Var\brak{\left.Y\right | X=x} &= Var\brak{\sigma_Y\sqrt{1 - {\rho}^2}Z_2}\\
+			      &= {\brak{1 - {\rho}^2}{\sigma_Y}^2}Var\brak{Z_2}
+\end{align}
+$Z_2$ is a normal distribution so,
+\begin{align}
+E\brak{Z_2} &= 0\\
+Var\brak{Z_2} &= 1
+\end{align}
+By substituting these values in above equations,
+\begin{align}
+E\brak{\left.Y\right | X=x} &= \mu_Y +\rho\brak{\frac{\sigma_Y}{\sigma_X}}\brak{x - \mu_X}\\
+Var\brak{\left.Y\right | X=x} &= \brak{1 - {\rho}^2}{\sigma_Y}^2
+\end{align}
+In our case, 
+\begin{align}
+Y &= W_4\\
+X &= W_2\\
+x &= 2
+\end{align}
+Hence, we get that,
+\begin{align}
+\mu_X = \mu_Y &= 0\\ 
+\sigma_X &= \sqrt{2}\\
+\sigma_Y &= 2\\
+\rho &= \frac{2}{\sqrt{8}}\\
+     &= \frac{1}{\sqrt{2}}
+\end{align} 
+Substituting the values in above equations,
+\begin{align}
+E\brak{\left.Y\right | X=2} &= \frac{1}{\sqrt{2}}\cdot\frac{2}{\sqrt{2}}\cdot 2\\
+			    &= 2\\
+Var\brak{\left.Y\right | X=2} &= \brak{1 - \frac{1}{2}}\brak{2}^2\\
+			      &= \frac{1}{2}\cdot 4\\
+			      &= 2
+\end{align}
+Substituting these values in \eqref{33.2023.1},
+\begin{align}
+E\brak{\left.Y^2\right | X=2} &= 2 + \brak{2}^2\\
+			      &= 6\\
+E\brak{\left.{W_4}^2\right | W_2=2} &= 6
+\end{align}
+\newline\newline\newline
+Steps for Simulation:
+\begin{enumerate}
+\item Set the number of samples to be generated as 10000
+\item Write a function to generate a uniform distribution
+\item Write a function to generate a normal distribution by using the uniform distribution function defined above through box muller method
+\item Write a function to generate value of $\vec{z}$ from one the column of the dist matrix
+\item Write a function to calculate $\vec{x}$ by matrix multiplication: $\vec{x} = A\vec{z} + \vec{u}$.
+\item Write a function to store values of each vector $\vec{x}$ obtained in a 2D array of size 2*numsamples
+\item Make a temporary 2D array(dist) of size 2x10000 to store the values of $Z_1$ and $Z_2$ obtained after calling the normal distribution function
+\item Use a for loop to store the values obtained by calling the normal function multiple times 
+\item 
+\item Assume values for constants,
+\begin{align}
+\sigma_X = 0.5\\
+\sigma_Y = 0.8\\
+\rho = 0.5\\
+\mu_X = 1\\
+\mu_Y = 1.5
+\end{align}
+\item Create $A$ matrix and vector $\bm{\mu}$ and fill the values assumed above in these, the dimension for matrix is 2x2 and the vector 2x1
+\item Make a 2D array(ans) to store the final values of $\vec{x}$ obtained after matrix multiplication
+\item For each iteration, create a $\vec{z}$ assign values from one of the columns from dist to $\vec{z}$ using the function defined above
+\item For each iteration, Generate $\vec{x}$  vector and call the function to solve to matrix multiplication and give value for $\vec{x}$  
+\item Store the values obtained from matrix multiplication in the ans array using the store function defined above 
+\item The ans array has the values of $\vec{x}$ for 10000 simulations.
+\end{enumerate}
+
+
+
+
