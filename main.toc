@@ -2,16 +2,16 @@
 \contentsline {schapter}{Introduction}{iii}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Axioms}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Distributions}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Conditional Probability}{39}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Random Variable}{41}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Moments}{43}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Random Algebra}{55}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Hypothesis Testing}{57}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Bivariate Random Variables}{73}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Random Processes}{75}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Convergence}{77}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Information Theory}{87}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Markov chain}{97}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Estimation}{99}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Multivariate Gaussian}{121}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Simulation Steps}{123}{section.14.1}%
+\contentsline {chapter}{\numberline {3}Conditional Probability}{41}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Random Variable}{43}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Moments}{45}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Random Algebra}{57}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Hypothesis Testing}{59}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Bivariate Random Variables}{75}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Random Processes}{77}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Convergence}{79}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Information Theory}{89}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Markov chain}{99}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Estimation}{101}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Multivariate Gaussian}{123}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Simulation Steps}{125}{section.14.1}%
