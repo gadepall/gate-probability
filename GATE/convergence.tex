@@ -17,4 +17,14 @@ distribution to $Y$, then $\{X_n + Y_n\}_{n \geq 1}$ converges in distribution t
 \\
 \solution
 \input{2023/ST/32/main.tex}
+\item Let $\{X_n\}_{n \geq 1}$ be a sequence of independent and identically distributed random variables each having probability density function
+\[
+f(x) = 
+\begin{cases}
+  e^{-x} & \text{if } x > 0 \\
+  0 & \text{otherwise}.
+\end{cases}
+\]
+For $n \geq 1$, let $Y_n = |X_{2n} - X_{2n-1}|$. If $\overline{Y}_n = \frac{1}{n} \sum_{i=1}^{n} Y_i$ for $n \geq 1$ and $\{\sqrt{n} (e^{-\overline{Y}_n} - e^{-1})\}_{n \geq 1}$ converges in distribution to a normal random variable with mean $0$ and variance $\sigma^2$, then $\sigma^2$ (rounded off to two decimal places) equals \hfill (GATE ST 2023) \\
+\input{2023/ST/61/gate.tex}
 \end{enumerate}
