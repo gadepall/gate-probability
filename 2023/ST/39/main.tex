@@ -1,3 +1,4 @@
+\iffalse
 \documentclass[]{article}
 \usepackage{amsfonts, amssymb}
 \usepackage{amsmath}
@@ -110,6 +111,7 @@ where $\mu \in \mathbb{R}$ is an unknown parameter. If $\hat{M}$ is the maximum 
   \item $\pr{\hat{M} \leq 3}$ = $1 - e^{-n(1-\log_e 2)}$ if $\mu = 1$
   \item $\pr{\hat{M} \leq 4}$ = $1 - e^{-n(2\log_e 2-1)}$ if $\mu = 1$
 \end{enumerate}
+\fi
 \solution
 For continuous random variable X, median M is such that,
 \begin{align}
@@ -194,7 +196,7 @@ Thus,
 It needs a value of n to be computed.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/fig.png} 
+    \includegraphics[width=0.8\textwidth]{2023/ST/39/figs/fig.png} 
     \caption{Verifying gamma cdf through simulation}
     \label{fig:39/2023}
 \end{figure}\\
@@ -208,4 +210,3 @@ Steps for simulation in C:
 \item The output file is loaded into the python code with theoretical cdf values, and the final graph between theoretical and simulated cdf is plotted.
 \item The simulated and theoretical cdf values match, which verifies the gamma cdf through simulation.
 \end{enumerate}
-\end{document}
