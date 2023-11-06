@@ -66,4 +66,21 @@ where ${\alpha}_0$ , ${\alpha}_1$ and ${\alpha}_2$ are unknown parameters and $\
 \end{enumerate} 
 \hfill(GATE ST 2023)\\
 \input{2023/ST/24/gate.tex}
+\item Let $X_1$, $X_2$, ... , $X_n$ be a random sample of size $n$ from a population having probability density function
+\begin{align}
+p_X(x; \mu) =
+\begin{cases}
+e^{-(x-\mu)}, & \text{if } \mu \leq x < \infty \\
+0, & \text{otherwise,} 
+\end{cases}
+\end{align}
+where $\mu \in \mathbb{R}$ is an unknown parameter. If $\hat{M}$ is the maximum likelihood estimator of the median of $X_1$, then which one of the following statements is true?
+\begin{enumerate}[label=\Alph*)]
+  \item $\pr{\hat{M} \leq 2}$ = $1 - e^{-n(1-\log_e 2)}$ if $\mu = 1$
+  \item $\pr{\hat{M} \leq 1}$ = $1 - e^{-n \log_e 2}$ if $\mu = 1$
+  \item $\pr{\hat{M} \leq 3}$ = $1 - e^{-n(1-\log_e 2)}$ if $\mu = 1$
+  \item $\pr{\hat{M} \leq 4}$ = $1 - e^{-n(2\log_e 2-1)}$ if $\mu = 1$
+\end{enumerate}
+\hfill(GATE ST 2023)\\
+\input{2023/ST/39/main.tex}
 \end{enumerate}
