@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \def\inputGnumericTable{}  
@@ -230,6 +231,7 @@ The probability of tropical cyclone-induced storm in the same location is given 
 f_{X_2}\brak{x_2} = 2e^{-2x_2},\quad x_2>0
 \end{align}
 The probability of occuring more than 1 unit of storm event is\\
+\fi
 \solution\\
 \textbf{Laplace Transform}\\
 Let $X$ be a random variable such that 
@@ -256,10 +258,10 @@ F_{X_2}\brak{x} &= \int_{-\infty}^{x} f_{X_2}\brak{x}dx\\
 \end{align}
 Now,
 \begin{align}
-M_X\brak{s} &= M_{X_1}\brak{s} \cdot M_{X_2}\brak{s}\label{eq:1}\\
+M_X\brak{s} &= M_{X_1}\brak{s} \cdot M_{X_2}\brak{s}\label{eq:2023/AG/49/1}\\
 M_{X_1}\brak{s} &= \int_{-\infty}^{\infty} f_{X_1}\brak{x}\cdot e^{-sx}dx\\
 &= \int_{0}^{\infty} e^{-x}\cdot e^{-sx}u\brak{x}dx\\
-&= \frac{1}{s+1}\label{eq:2}
+&= \frac{1}{s+1}\label{eq:2023/AG/49/2}
 \end{align}
 Region of Convergence\brak{ROC} of $M_{X_1}\brak{s}$:
 \begin{align}
@@ -269,13 +271,13 @@ Now,
 \begin{align}
 M_{X_2}\brak{s} &= \int_{-\infty}^{\infty} f_{X_2}\brak{x}\cdot e^{-sx}dx\\
 &=\int_{0}^{\infty} 2e^{-2x}\cdot e^{-sx}u\brak{x}dx\\
-&= \frac{2}{s+2}\label{eq:3}
+&= \frac{2}{s+2}\label{eq:2023/AG/49/3}
 \end{align}
 ROC of $M_{X_2}\brak{s}$:
 \begin{align}
 Re(s) > -2
 \end{align}
-Using \eqref{eq:2} and \eqref{eq:3} in \eqref{eq:1}
+Using \eqref{eq:2023/AG/49/2} and \eqref{eq:2023/AG/49/3} in \eqref{eq:2023/AG/49/1}
 \begin{align}
 M_X\brak{s} &= \frac{1}{s+1} \times \frac{2}{s+2}\\
 &= \frac{2}{\brak{s+1}\brak{s+2}}
@@ -359,20 +361,20 @@ Steps for simulation the given distribution
 \end{enumerate}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/figure1.png}
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure1.png}
 \caption{Theoretical vs Simulation Analysis wrt $X_1$ }
-\label{Fig:1}
+\label{Fig:2023/AG/49/4}
 \end{figure}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/figure2.png}
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure2.png}
 \caption{Theoretical vs Simulation Analysis wrt $X_2$ }
-\label{Fig:2}
+\label{Fig:2023/AG/49/5}
 \end{figure}
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/figure3.png}
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure3.png}
 \caption{Theoretical vs Simulation Analysis wrt $X$ }
-\label{Fig:2}
+\label{Fig:2023/AG/49/6}
 \end{figure}
 \end{document}
