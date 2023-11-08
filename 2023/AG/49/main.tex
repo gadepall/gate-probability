@@ -1,0 +1,379 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\def\inputGnumericTable{}  
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{gvv}
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}  
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+%	\logo{
+Answer 
+%	}
+}
+\author{ Dhruv Parashar - EE22BTECH11019$^{*}$% <-this % stops a space	
+}	
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+Question:
+In a locality 'A', the probability of a convective storm event is $0.7$ with a density function,
+\begin{align}
+f_{X_1}\brak{x_1} = e^{-x_1},\quad x_1>0
+\end{align} 
+The probability of tropical cyclone-induced storm in the same location is given by the density function,
+\begin{align}
+f_{X_2}\brak{x_2} = 2e^{-2x_2},\quad x_2>0
+\end{align}
+The probability of occuring more than 1 unit of storm event is\\
+\fi
+\solution\\
+\textbf{Laplace Transform}\\
+Let $X$ be a random variable such that 
+\begin{align}
+X = X_1 + X_2
+\end{align}
+Given,
+\begin{align}
+f_{X_1}\brak{x} &= e^{-x}u\brak{x}\\
+f_{X_2}\brak{x} &= 2e^{-2x}u\brak{x}
+\end{align}
+Where, $u\brak{x}$ is unit step function.\\
+CDF of $X_1$:
+\begin{align}
+F_{X_1}\brak{x} &= \int_{-\infty}^{x} f_{X_1}\brak{x}dx\\
+&= \int_{0}^{x} e^{-x}dx\\
+&= 1- e^{-x}
+\end{align}
+CDF of $X_2$:
+\begin{align}
+F_{X_2}\brak{x} &= \int_{-\infty}^{x} f_{X_2}\brak{x}dx\\
+&= \int_{0}^{x} 2e^{-2x}dx\\
+&= 1- e^{-2x}
+\end{align}
+Now,
+\begin{align}
+M_X\brak{s} &= M_{X_1}\brak{s} \cdot M_{X_2}\brak{s}\label{eq:2023/AG/49/1}\\
+M_{X_1}\brak{s} &= \int_{-\infty}^{\infty} f_{X_1}\brak{x}\cdot e^{-sx}dx\\
+&= \int_{0}^{\infty} e^{-x}\cdot e^{-sx}u\brak{x}dx\\
+&= \frac{1}{s+1}\label{eq:2023/AG/49/2}
+\end{align}
+Region of Convergence\brak{ROC} of $M_{X_1}\brak{s}$:
+\begin{align}
+Re(s) > -1
+\end{align}
+Now,
+\begin{align}
+M_{X_2}\brak{s} &= \int_{-\infty}^{\infty} f_{X_2}\brak{x}\cdot e^{-sx}dx\\
+&=\int_{0}^{\infty} 2e^{-2x}\cdot e^{-sx}u\brak{x}dx\\
+&= \frac{2}{s+2}\label{eq:2023/AG/49/3}
+\end{align}
+ROC of $M_{X_2}\brak{s}$:
+\begin{align}
+Re(s) > -2
+\end{align}
+Using \eqref{eq:2023/AG/49/2} and \eqref{eq:2023/AG/49/3} in \eqref{eq:2023/AG/49/1}
+\begin{align}
+M_X\brak{s} &= \frac{1}{s+1} \times \frac{2}{s+2}\\
+&= \frac{2}{\brak{s+1}\brak{s+2}}
+\end{align}
+\begin{align}
+p_X\brak{x} &= L^{-1}\sbrak{M_X\brak{s}}\\
+&= L^{-1}\sbrak{\frac{2}{\brak{s+1}\brak{s+2}}}\\
+&= 2L^{-1}\sbrak{\frac{1}{s+1}-\frac{1}{s+2}}
+\end{align}
+ROC of laplace transform:
+\begin{align}
+Re(s)>-1 \cap Re(s)>-2\\
+\implies Re(s)>-1 
+\end{align}
+So, now 
+\begin{align}
+p_X\brak{x} &= 2\brak{e^{-x}-e^{-2x}}u\brak{x}
+\end{align}
+CDF of X:
+\begin{align}
+F_{X}\brak{x} &= \int_{-\infty}^{x} p_X\brak{x}dx\\
+&= 2\int_{-\infty}^{x}\brak{e^{-x}-e^{-2x}}u\brak{x}dx
+\end{align}
+But $p_X\brak{x}$ is integrable for $x>0$
+\begin{align}
+F_{X}\brak{x} &= 2\int_{0}^{x} \brak{e^{-x}-e^{-2x}}dx\\
+&= 2\brak{-e^{-x}+\frac{1}{2}e^{-2x}}\Bigg|_{0}^{x}\\
+&= 2\brak{-e^{-x}+\frac{1}{2}e^{-2x}+\frac{1}{2}}\\
+&= -2e^{-x}+e^{-2x}+1
+\end{align}
+Now,
+\begin{align}
+\pr{X>1}&= F_{X}\brak{1}\\
+&= -2e^{-1}+e^{-2}+1\\
+&= 0.39
+\end{align}
+Steps for simulation the given distribution 
+\begin{enumerate}
+\item CDF of $X_1$ is given as:
+  \begin{align}
+  F_{X_1}(x) &= 
+  \begin{cases}
+	  0 & x \le 0
+  \\
+	  1- e^{-x} &  x > 0
+  \end{cases}
+  \end{align}
+\item Declare a function inverse cdf \brak{I\brak{u}} such that its input is any random number 
+	and output is random variable whose cdf equals that of the given distribution\\
+	For x $\le$ 0
+		\begin{align}
+			u &= 0 \\
+			\because x \le 0\\
+			u \le 0
+		\end{align}
+	For x $>$ 0
+		\begin{align}
+			u &= 1- e^{-x}\\
+			e^{-x} &= 1-u\\
+			x &= -\ln \brak{1-u}\\
+			\because x > 0\\
+			u > 0
+		\end{align}
+  \begin{align}
+  I\brak{u} &=
+  \begin{cases}
+	  0 & u \le 0
+  \\
+	  -\ln \brak{1-u} &  u > 0
+  \end{cases}
+  \end{align}
+\item Define three arrays random\textunderscore{vars} , cdf\textunderscore{values}
+	, theoretical\textunderscore{cdf}\textunderscore{values}
+	to store random variables, simulated cdf values and theoretical cdf values
+\item Generate random numbers using rand() and calling inverse cdf funtion to generate our random variable
+\item Calling cdf function to calculate the cdf of the generated random variable
+\item Storing the random variable,theoretical cdf and generated cdf into their respective arrays
+\item Storing the data of these three array into a .dat file
+\item Plotting these .dat file in python
+\item Repeat all these steps for $X_2$ as well as $X$
+\end{enumerate}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure1.png}
+\caption{Theoretical vs Simulation Analysis wrt $X_1$ }
+\label{Fig:2023/AG/49/4}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure2.png}
+\caption{Theoretical vs Simulation Analysis wrt $X_2$ }
+\label{Fig:2023/AG/49/5}
+\end{figure}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{2023/AG/49/figs/figure3.png}
+\caption{Theoretical vs Simulation Analysis wrt $X$ }
+\label{Fig:2023/AG/49/6}
+\end{figure}
