@@ -1,0 +1,421 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{setspace}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{color}    
+\usepackage{array}    
+\usepackage{longtable}
+\usepackage{calc}     
+\usepackage{multirow} 
+\usepackage{hhline}   
+\usepackage{ifthen}   
+\usepackage{lscape}     
+\usepackage{chngcntr}
+\DeclareMathOperator*{\Res}{Res}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\providecommand{\gauss}[2]{\mathcal{N}\ensuremath{\left(#1,#2\right)}}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+\begin{document}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\providecommand{\system}[1]{\overset{\mathcal{#1}}{ \longleftrightarrow}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\let\vec\mathbf
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\setlength{\parindent}{0pt}
+\bibliographystyle{IEEEtran}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\title{
+%	\logo{
+Probability and Random Processes
+%	}
+}
+\author{ Gude Pravarsh EE22BTECH11023$^{*}$% <-this % stops a space
+	%
+}
+	
+	
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+% make the title area 
+\maketitle
+
+\newpage
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords} 
+Q)Let $\{X_n\}_{n \geq 1}$ be a sequence of independent and identically distributed random variables each having probability density function
+\[
+f(x) = 
+\begin{cases}
+  e^{-x} & \text{if } x > 0 \\
+  0 & \text{otherwise}.
+\end{cases}
+\]
+For $n \geq 1$, let $Y_n = |X_{2n} - X_{2n-1}|$. If $\overline{Y}_n = \frac{1}{n} \sum_{i=1}^{n} Y_i$ for $n \geq 1$ and $\{\sqrt{n} (e^{-\overline{Y}_n} - e^{-1})\}_{n \geq 1}$ converges in distribution to a normal random variable with mean $0$ and variance $\sigma^2$, then $\sigma^2$ (rounded off to two decimal places) equals \hfill (GATE ST 2023) \\
+   \fi
+   \solution
+\begin{enumerate}
+\item Let $X, Y \sim \exp(1)$ and $Z = X - Y$ 
+\begin{align}
+p_X(x) &= e^{-x}u(x) \\
+M_X(s) &= E\brak{e^{-sX}} \\
+&= \int_{0}^{\infty}e^{-sx} e^{-x} \,dx \\
+&= \frac{1}{s + 1}
+\end{align} 
+ROC for $M_X(s):\text{Re}(s)>-1$ \\ 
+Similarly,
+\begin{align}
+M_Y(s) &= \frac{1}{s + 1} \\
+M_Y(-s) &= \frac{1}{-s + 1} 
+\end{align}
+ROC for $M_Y(-s):\text{Re}(s)<1$
+\begin{align}
+M_Z(s) &= E\brak{e^{-sZ}} 
+\end{align}
+Using,
+\begin{align}
+Z &= X - Y \label{eq:ST/2023/61/1} \\
+\implies M_Z(s) &= E\brak{e^{-s(X-Y)}} \\
+&= E\brak{e^{-sX}}E\brak{e^{sY}} \\
+&= M_X(s)M_Y(-s) \\
+&= \frac{1}{s+1}\times\frac{1}{-s+1} \\ 
+M_Z(s) &= \frac{1}{1-s^2} 
+\end{align}
+The ROC for the laplace transform : $ |\text{Re}(s)|<1 $\\
+\begin{align}
+M_Z(s) &= \frac{1}{2}\brak{\frac{1}{1-s} + \frac{1}{1+s}} 
+\end{align}
+Using Inverse Laplace transform,
+\begin{align}
+P_Z(x) &= \frac{1}{2}\brak{ e^x u\brak{-x} + e^{-x} u\brak{x}} \\
+p_Z(x) &=  \frac{1}{2} e^{-|x|} \\
+\implies Z &\sim \mathrm{Lap}\brak{0, 1} 
+\end{align}
+\item Let $T = |Z|$
+\begin{align}
+p_Z(x) &= \frac{1}{2} e^{-|x|} \\
+F_Z(x) &= \int_{-\infty}^{x} \frac{1}{2} e^{-|t|} \,dt \\
+&= \frac{1}{2} + \frac{1}{2} e^{-x} \\
+F_T(x) &= \pr{T \leq x} \\
+&=\pr{|Z| \leq x} \\ 
+&= \pr{-x \leq Z \leq x} \\
+F_T(x) &= \frac{1}{2} - \frac{1}{2} e^{-x} - \brak{- \frac{1}{2} + \frac{1}{2} e^{-x}} \\
+F_T(x) &= 1 - e^{-x} \text{ for $x>0$} \\
+T &\sim \exp\brak{1} \\
+\implies |Z| &\sim \exp\brak{1}  \label{eq:ST/2023/61/3}
+\end{align}
+Using equations \eqref{eq:ST/2023/61/1} and \eqref{eq:ST/2023/61/3}, we get:
+\begin{align}
+|X_{2n} - X_{2n-1}| &\sim \exp(1) \\
+\implies Y_n &\sim \exp(1)  \\
+M_{Y_n}(s) &= \frac{1}{1+s} \\
+\text{E}\brak{Y_n} &= \mu_1 \\
+\mu_1 &= -\frac{dM_{Y_n}(s)}{ds} \\
+&= -\left. \frac{d}{ds} \brak{\frac{1}{s + 1}} \right|_{s=0} 
+\end{align}
+\begin{align}
+&= \left. \frac{1}{(s + 1)^2} \right|_{s=0} \\ 
+\text{E}\brak{Y_n} &= 1 \\
+\text{E}\brak{{Y_n}^2} &= \mu_2 \\
+\mu_2 &= \frac{d^2{Y_n}(s)}{ds^2} \\
+&= \left. \frac{d^2}{ds^2} \brak{\frac{-1}{(s + 1)^2}} \right|_{s=0} \\
+&= \left. \frac{2}{(s + 1)^3} \right|_{s=0} \\
+\text{E}\brak{{Y_n}^2} &= 2 
+\end{align}
+\begin{align}
+\mathrm{Var}(Y_n) &= \mathrm{E}((Y_n -\mathrm{E}(Y_n))^2) \\
+&= \mathrm{E}((Y_n - 1)^2) \\
+&= \mathrm{E}({Y_n}^2) -2 \mathrm{E}(Y_n) + 1 = 1  
+\end{align}
+\item We know, \begin{align}
+\overline{Y}_n &= \frac{1}{n} \sum_{i=1}^{n} Y_i \\
+\mathrm{E}\brak{\overline{Y}_n} &= \frac{1}{n} \sum_{i=1}^{n} \mathrm{E}\brak{Y_i} \\
+&= \frac{1}{n} \cdot \brak{n} = 1 \\
+\mathrm{E}\brak{\overline{Y}_n}&= 1 
+\end{align}
+\begin{align}
+    \text{var}\brak{\overline{Y}_n} &= \text{E}\sbrak{\brak{\frac{1}{n} \sum_{i=1}^{n} Y_i}^2} - \brak{\text{E}\sbrak{\frac{1}{n} \sum_{i=1}^{n} Y_i}}^2\\
+    &= \frac{1}{n^2} \cbrak{\text{E}\sbrak{\brak{\sum_{i=1}^{n} Y_i}^2} - \brak{\text{E}\sbrak{\sum_{i=1}^{n} Y_i}}^2}\label{eq:ST/61/2023/1}
+\end{align}
+But
+\begin{align}
+    \text{E}\sbrak{\brak{\sum_{i=1}^{n} Y_i}^2} &= \text{E}\sbrak{\sum_{i=1}^{n} \sum_{j=1}^{n} Y_iY_j}\\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \text{E}\sbrak{Y_iY_j} \label{eq:ST/61/2023/2}
+\end{align}
+and 
+\begin{align}
+    \brak{\text{E}\sbrak{\sum_{i=1}^{n} Y_i}}^2 &= \brak{\sum_{i=1}^{n} \text{E}\sbrak{Y_i}}^2\\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \text{E}\sbrak{Y_i} \text{E}\sbrak{Y_j} \label{eq:ST/61/2023/3}
+\end{align}
+Putting \eqref{eq:ST/61/2023/2} and \eqref{eq:ST/61/2023/3} in \eqref{eq:ST/61/2023/1}, and using the definition of covariance,
+\begin{align}
+    \text{var}\brak{\overline{Y}_n} &= \frac{1}{n^2} \cbrak{\sum_{i=1}^{n} \sum_{j=1}^{n} \brak{\text{E}\sbrak{Y_iY_j} - \text{E}\sbrak{Y_i} \text{E}\sbrak{Y_j}}}\\
+    &= \frac{1}{n^2} \cbrak{\sum_{i=1}^{n} \sum_{j=1}^{n} \text{cov}\brak{Y_i, Y_j}} \label{eq:ST/61/2023/4}
+\end{align}
+As all the variables are i.i.d's and are thus uncorrelated,
+\begin{align}
+    \text{cov}\brak{Y_i, Y_j} =
+    \begin{cases}
+        0 & \text{if } i \ne j\\
+        \text{var}\brak{Y_i} & \text{if } i = j
+    \end{cases}\label{eq:ST/61/2023/5}
+\end{align}
+Putting \eqref{eq:ST/61/2023/5} in \eqref{eq:ST/61/2023/4},
+\begin{align}
+    \text{var}\brak{\overline{Y}_n} &= \frac{1}{n^2} \brak{\sum_{i=1}^{n} \text{cov}\brak{Y_i, Y_i}}\\
+     &= \frac{1}{n^2} \brak{\sum_{i=1}^{n} \text{var}\brak{Y_i}}\\
+     &= \frac{1}{n^2} \cdot n = \frac{1}{n}\\
+\text{var}\brak{\overline{Y}_n} &= \frac{1}{n} \\
+\implies \mathrm{E}\brak{\overline{Y}_n} &= 1 \text{ and } \mathrm{Var}\brak{\overline{Y}_n} = \frac{1}{n}  
+\end{align}
+By the Central Limit Theorem, $n \to \infty \implies \sqrt{n} (Y_n - \mu) \xrightarrow{} \mathcal{N}(0, 1)$
+\begin{align}
+\frac{\overline{Y_n} - 1}{\frac{1}{\sqrt{n}}} &\sim \mathcal{N}(0, 1) \\
+\sqrt{n} (\overline{Y_n}- 1) &\sim \mathcal{N}(0, 1) 
+\end{align}
+We know,
+\begin{align}
+\sqrt{n} (Y_n - k) \sim \mathcal{N}(0,\sigma^2) 
+\end{align}
+Let us write the taylor expansion of $g\brak{Y_n}$ around $k$
+\begin{align}
+g(Y_n) = g(k) + g'(k)(Y_n - k) + \frac{1}{2}g''(k)(Y_n - k)^2 + \ldots 
+\end{align}
+Apply the Central Limit Theorem (CLT) to the standardized variable $Z_n$ 
+\begin{align}
+Z_n = \frac{\sqrt{n}g'(k)(Y_n - k)}{\sigma \sqrt{n}} \\
+n \to \infty \implies Z_n \xrightarrow{} \mathcal{N}(0, 1)
+\end{align}
+Compare with standardised variable we get,
+\begin{align}
+\implies \sqrt{n} (g\brak{Y_n} - g(k)) \sim \mathcal{N}(0, \sigma^2 [g'(k)]^2) \label{eq:ST/2023/61/2}
+\end{align}
+\end{enumerate}
+\begin{align}
+g(x) = e^{-x} \implies g'(x) = -e^{-x} 
+\end{align}
+Using equation \eqref{eq:ST/2023/61/2}, we get:
+\begin{align}
+\sqrt{n} (e^{-\overline{Y}_n} - e^{-1}) \sim \mathcal{N}(0,e^{-2}) \\
+\implies \sigma^2 = e^{-2} = 0.14 
+\end{align}
+\textbf{Steps for Simulation:}
+\begin{enumerate}
+\item  rand() / (double)RAND MAX: \\
+This generates a random variable between 0 and RAND MAX and divides
+it by RAND MAX to obtain a uniform distribution between 0 and 1
+\item -log(rand() / (double)RAND MAX) : \\
+This transforms the uniform distribution between 0 and 1 into an exponential
+distribution by making the values vary from 0 to  $\infty$.
+\item Generate '2n' samples of Random Variable $X$ from the given probability density function.
+\item Now generate 'n' samples of $Y = |X_{2n} - X_{2n-1}| $.
+\item Now find $\overline{Y}$ which is mean of 'n' samples of $Y$.
+\item Now calculate $\sqrt{n} (e^{-\overline{Y}_n} - e^{-1})$ as result.
+\item Now repeat the process for 'm' simulations so that we get m results.
+\item Calculate the mean and the variance of the 'm' results obtained earlier using basic mean and variance formula.
+\end{enumerate}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_1.png}
+\caption{pdf of the laplacian}
+\label{fig:2023/ST/61/1}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_2.png}
+\caption{pdf of absolute of the laplacian}
+\label{fig:2023/ST/61/2}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_3.png}
+\caption{Gaussian pdf}
+\label{fig:2023/ST/61/3}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_11.png}
+\caption{Cdf of X}
+\label{fig:2023/ST/61/4}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_12.png}
+\caption{Cdf of Z}
+\label{fig:2023/ST/61/5}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_13.png}
+\caption{Cdf of T}
+\label{fig:2023/ST/61/6}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_14.png}
+\caption{Cdf of $Y_n$}
+\label{fig:2023/ST/61/7}
+\end{figure}
+\begin{figure}[ht]
+\includegraphics[width=\columnwidth]{2023/ST/61/figs/Figure_15.png}
+\caption{Cdf of $Z_n$}
+\label{fig:2023/ST/61/8}
+\end{figure}
