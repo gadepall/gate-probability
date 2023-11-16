@@ -203,7 +203,7 @@ function
     \begin{cases}
         \phi(x), &  x < -1 \\
         \phi(x+1) , &  x \ge -1
-    \end{cases} \label{eq:15st/2022}
+    \end{cases} 
 \end{align}
 then which one of the following statements is true?
 \begin{enumerate}
@@ -219,15 +219,15 @@ Q function is defined
 \begin{align}
 	\qfunc{x} &= \frac{1}{\sqrt{2\pi}}\int_{x}^{\infty} e^{\frac{-u^2}{2}} du \label{eq:15st/2022/1}
 \end{align}
-From \eqref{eq:15st/2022} and \eqref{eq:15st/2022/1};
+From the question and \eqref{eq:15st/2022/1};
 \begin{align}
 	F_X(x) &= 
 	\begin{cases}
         \qfunc{-x} , &  x < -1 \\
         1-\qfunc{x+1} , &  x \ge -1
-        \end{cases} \label{eq:15st/2022/3}
+        \end{cases} \label{eq:15st/2022/2}
 \end{align}
-From \eqref{eq:15st/2022/3};
+From \eqref{eq:15st/2022/2};
 \begin{enumerate}
 \item \begin{align}
 	\pr{X \le -1} = F_X(-1) &= 1 - \qfunc{0} \\
@@ -258,12 +258,11 @@ So Option C i.e., $P(X < -1) = \frac{1}{2}$ is incorrect
 So Option D i.e., $P(X \leq 0) = \frac{1}{2}$ is incorrect
 \end{enumerate}
 \newpage
-Guassian CDF plot of X is given in fig\ref{fig:15st/2022} \\
+Guassian CDF plot of X is given in  \\
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=\columnwidth]{2023/ST/15/figs/figure.png}
     \caption{}
-    \label{fig:15st/2022}
 \end{figure}
 \newpage
 \textbf{Box-Muller}\\
@@ -371,9 +370,7 @@ C and Python codes are given below :
   \centering
   \includegraphics[width=\columnwidth]{2023/ST/15/figs/figure1.png}  % Replace 'image_filename' with your image file name
   \caption{Histogram plot of density of $Z_0$}
-  \label{fig:your_label}
 \end{figure}
-
 
 
 
