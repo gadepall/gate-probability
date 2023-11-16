@@ -1,4 +1,4 @@
-
+\fi
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,onecolumn]{IEEEtran}
@@ -218,6 +218,7 @@ Let $T = \frac{1}{10}\sum^{10}_{i=1}{X_i^2}$. If the mean square error of $cT \b
 \end{enumerate}
 \hfill{(GATE ST 2023)}
 \\
+\fi
 \solution
 The mean of $T$ is given by,
 \begin{align}
@@ -260,7 +261,7 @@ As all the variables are i.i.d's and are thus uncorrelated,
     \begin{cases}
         0 & \text{if } i \ne j\\
         V\brak{X_i^2} & \text{if } i = j
-    \end{cases} \label{eq:st_32_2023_5}
+    \end{cases}
 \end{align}
 Now,
 \begin{align}
@@ -335,7 +336,7 @@ The mean square error is small relative to the value of $\theta$, hence $cT$ is 
 \\
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width = \columnwidth]{./figs/fig1.png}
+	\includegraphics[width = \columnwidth]{2023/ST/40/figs/fig1.png}
 \end{figure}
 \\
 Using laplace transform to find CDF,
@@ -394,7 +395,7 @@ Let $\theta = 0.5$ for simulation,
 \\
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width = \columnwidth]{./figs/cdf.png}
+	\includegraphics[width = \columnwidth]{2023/ST/40/figs/cdf.png}
 	\caption{Theoretical CDF vs Simulation CDF}
 \end{figure}
 \\
@@ -416,5 +417,4 @@ Simulation procedure:
 	\item The value of $c$ which minimizes the mean square error is found by calculating $E\brak{\brak{cT - \theta^2}^2}$ for a range of values of $c$ and choosing that value of $c$ which gives the minimum value for the expression.
 	\item The cdf is simulated by counting the number of samples less than a certain $t$ and dividing it by the total number of samples. This gives the CDF of $T$ at $t$. 
 \end{enumerate}
-\end{document}
 
