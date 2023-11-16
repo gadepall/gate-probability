@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -256,6 +257,7 @@ Then which of the following statements is/are true?
 \item The joint moment generating function of $(X,Y)$ is $e^{-2+(1 + e^u)e^v}$ for all $(u,v) \in {R^2}$
 \end{enumerate}
 \hfill(GATE ST 2023)\\
+\fi
 \solution
 Given
 \begin{align}
@@ -371,14 +373,13 @@ Since, this distribution is discrete, we use following method to find the discre
 In simpler terms, you're using U to navigate through the distribution's cumulative probabilities to find the corresponding value of $X$ and $Y$. Using this method, random number is compared to cumulative probabilities (CDF) for various values of the random variable $k$ until the CDF exceeds it. This process continues until a match is found and $k$ is returned as the generated random variable.
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{figs/fig1.png}
+\includegraphics[width=\columnwidth]{2023/ST/56/figs/fig1.png}
 \caption{CDF of X}
-\label{fig:Theory vs Simulation}
+\label{fig:2023/ST/56/fig1}
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[width=\columnwidth]{figs/fig2.png}
+\includegraphics[width=\columnwidth]{2023/ST/56/figs/fig2.png}
 \caption{CDF of Y}
-\label{fig:Theory vs Simulation}
+\label{fig:2023/ST/56/fig2}
 \end{figure}
-\end{document}
