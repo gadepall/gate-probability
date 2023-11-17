@@ -347,48 +347,14 @@ According to the options, no more than 700 tests will be required.
     \item Seed the random number generator with the current time. Initialized an array representing individuals, marking the first \texttt{POSITIVE\_INDIVIDUALS} as positive. Calls the \texttt{covidTestingStrategy} function with the array and other parameters.\\ \\
 \end{enumerate} 
 Flowchart to explain the function \texttt{covidTestingStrategy} is given below :
-\tikzstyle{start} = [ellipse, minimum width=2cm, minimum height=1cm, text centered, draw=black]
-\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black]
-\tikzstyle{decision} = [diamond, minimum width=1cm, minimum height=1cm, text centered, draw=black]
-\tikzstyle{arrow} = [thick,->,>=stealth]
-\tikzstyle{end} = [ellipse, minimum width=2cm, minimum height=1cm, text centered, draw=black]
-\begin{center}
-\begin{tikzpicture}[node distance=2cm, auto]
-  % Nodes
-  \node [start] (start) {Start};
-  \node [process, below of=start] (initializea) {Initialize Variables and Array};
-  \node [process, below of=initializea] (initializeb) {Shuffle the Array};
-  \node [process, below of=initializeb] (initializec) {Take samples of groups of 5};
-  \node [decision, below of=initializec] (mix) {Test};
-  \node [process, below of=mix] (test) {Declare negative};
-  \node [end, below of=test] (end1) {End};
-  \node [process, right of=mix, xshift=3cm] (testIndividuals) {Test Individuals Separately};
-  \node [process, below of=testIndividuals] (incrementCount) {Increment Test Count};
-  
- 
-  \node [process, below of=incrementCount] (calculateProb) {Calculate Probabilities};
-  \node [process, below of=calculateProb] (printStats) {Print Statistics};
-  \node [end, below of=printStats] (end2) {End};
-
-  % Arrows
-  \draw [arrow] (start) -- (initializea);
-  \draw [arrow] (initializea) -- (initializeb);
-  \draw [arrow] (initializeb) -- (initializec);
-  \draw [arrow] (initializec) -- (mix);
-  \draw [arrow] (mix) -- (test);
-  \draw [arrow] (mix) -- node {Yes} (testIndividuals); 
-  \draw [arrow] (mix) -- node {No} (test);
-  \draw [arrow] (test) -- (end1);
-  \draw [arrow] (testIndividuals) -- (incrementCount);
-  \draw [arrow] (incrementCount) -- (calculateProb);
-  \draw [arrow] (calculateProb) -- (printStats);
-  \draw [arrow] (printStats) -- (end2);
-\end{tikzpicture}
-\end{center}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{screenshot/output}
+    \includegraphics[width=0.8\textwidth]{2023/BM/9/screenshot/diagram.png}
+    \label{fig:diagram69}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2023/BM/9/screenshot/output.png}
     \caption{output}
     \label{fig:output}
 \end{figure}
-
