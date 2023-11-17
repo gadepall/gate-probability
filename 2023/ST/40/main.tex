@@ -1,0 +1,420 @@
+\iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+       \def\inputGnumericTable{}                                 %%
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+\usepackage{gvv}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+ %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{Solution to GATE ST 2023.40}
+\author{Devansh Jain - EE22BTECH11018}
+%\title{
+%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through Octave}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+%\author{<-this % stops a space
+%\thanks{}}
+%}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+
+
+%\tableofcontents
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+%\renewcommand{\theequation}{\theenumi}
+
+%\begin{abstract}
+%%\boldmath
+%In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
+%
+%\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the journal you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals frown on math
+% in the abstract anyway.
+
+% Note that keywords are not normally used for peerreview papers.
+%\begin{IEEEkeywords}
+%Cooperative diversity, decode and forward, piecewise linear
+%\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+%\IEEEpeerreviewmaketitle
+Question:
+Let $X_1, X_2, ..., X_{10}$ be a random sample of size 10 from a population having $\gauss{0}{\theta^2}$ distribution, where $\theta > 0$ is an unknown parameter.
+Let $T = \frac{1}{10}\sum^{10}_{i=1}{X_i^2}$. If the mean square error of $cT \brak{c > 0}$ as an estimator of $\theta^2$, is minimized at $c = c_0$, then the value of $c_0$ equals
+\begin{enumerate}[label =(\roman*)]
+	\item $\frac{5}{6}$ \vspace{2pt}
+	\item $\frac{2}{3}$ \vspace{2pt}
+	\item $\frac{3}{5}$ \vspace{2pt}
+	\item $\frac{1}{2}$ \vspace{2pt}
+\end{enumerate}
+\hfill{(GATE ST 2023)}
+\\
+\fi
+\solution
+The mean of $T$ is given by,
+\begin{align}
+	E\brak{T} &= E\brak{\frac{1}{10}\sum^{10}_{i=1}{X_i^2}}\\
+	&= \frac{1}{10}\sum^{10}_{i=1}{E\brak{X_i^2}}
+\end{align}
+Since
+\begin{align}
+	E\brak{X^2} = V\brak{X} + \brak{E\brak{X}}^2 \label{eq:gate/2023/st/40/1}
+\end{align}
+Using \eqref{eq:gate/2023/st/40/1}
+\begin{align}
+	E\brak{T} &= \frac{1}{10}\sum^{10}_{i=1}{V\brak{X_i} + E\brak{X_i}^2}\\
+	&= \frac{1}{10}\brak{10\theta^2}\\
+	&= \theta^2
+\end{align}
+Similarly, using \eqref{eq:gate/2023/st/40/1}, the variance of $T$ is given by,
+\begin{align}
+	V\brak{T} &= E\brak{T^2} - E\brak{T}^2\\
+	&= \frac{1}{100}\brak{E\brak{\brak{\sum^{10}_{i=1}{X_i^2}}^2} - \brak{E\brak{\sum^{10}_{i=1}{X_i^2}}}^2}
+\end{align}
+But
+\begin{align}
+    \text{E}\brak{\brak{\sum_{i=1}^{10} X_i^2}^2} &= \text{E}\brak{\sum_{i=1}^{10} \sum_{j=1}^{10} X_i^2X_j^2}\\
+    &= \sum_{i=1}^{n} \sum_{j=1}^{n} \text{E}\brak{X_i^2X_j^2} \label{eq:gate/2023/st/40/2}
+\end{align}
+and 
+\begin{align}
+    \brak{\text{E}\brak{\sum_{i=1}^{10} X_i}}^2 &= \brak{\sum_{i=1}^{10} \text{E}\brak{X_i}}^2\\
+    &= \sum_{i=1}^{10} \sum_{j=1}^{10} \text{E}\brak{X_i} \text{E}\brak{X_j} \label{eq:gate/2023/st/40/3}
+\end{align}
+Using \eqref{eq:gate/2023/st/40/2} , \eqref{eq:gate/2023/st/40/3}, and the definition of covariance,
+\begin{align}
+	V\brak{T} &= \frac{1}{100} \brak{\sum_{i=1}^{10} \sum_{j=1}^{10} \brak{E\sbrak{X_i^2X_j^2} - E\brak{X_i^2} E\brak{X_j^2}}}\\
+    &= \frac{1}{100} \brak{\sum_{i=1}^{10} \sum_{j=1}^{10} \text{cov}\brak{X_i^2, X_j^2}}
+\end{align}
+As all the variables are i.i.d's and are thus uncorrelated,
+\begin{align}
+    \text{cov}\brak{X_i^2, X_j^2} = 
+    \begin{cases}
+        0 & \text{if } i \ne j\\
+        V\brak{X_i^2} & \text{if } i = j
+    \end{cases}
+\end{align}
+Now,
+\begin{align}
+	V\brak{T} &= \frac{1}{100}\sum^{10}_{i=1}{\text{cov}\brak{X_i^2,X_i^2}}\\
+	&= \frac{1}{100}\sum^{10}_{i=1}{V\brak{X^2_i}}
+\end{align}
+Using \eqref{eq:gate/2023/st/40/1} to find $V\brak{X_i^2}$,
+\begin{align}
+	V\brak{X^2_i} &= E\brak{X^4_i} - E\brak{X^2_i}^2
+\end{align}
+Using moment generating function to find $E\brak{X_i^4}$ and $E\brak{X_i^2}$,
+\begin{align}
+	M_X\brak{t} &= E\brak{e^{tX}}\\
+	&= e^{\frac{1}{2}\theta^2t^2}
+\end{align}
+Differentiating it with respect to $t$,
+\begin{align}
+	\frac{dM_X\brak{t}}{dt} &= E\brak{Xe^{tX}}\\
+	\frac{d^nM_X\brak{t}}{dt^n} &= E\brak{X^ne^{tX}}\\
+	\frac{dM_X\brak{t}}{dt} &= \theta^2te^{\frac{1}{2}\theta^2t^2}\\
+	\frac{d^2M_X\brak{t}}{dt^2} &= \theta^2e^{\frac{1}{2}\theta^2t^2} + \theta^4t^2e^{\frac{1}{2}\theta^2t^2}\\
+	\frac{d^3M_X\brak{t}}{dt^3} &= \theta^4te^{\frac{1}{2}\theta^2t^2} + 2\theta^4te^{\frac{1}{2}\theta^2t^2} + \theta^6t^3e^{\frac{1}{2}\theta^2t^2}\\
+	&= 3\theta^4te^{\frac{1}{2}\theta^2t^2} + \theta^6t^3e^{\frac{1}{2}\theta^2t^2}\\
+	\frac{d^4M_X\brak{t}}{dt^4} &= 3\theta^4e^{\frac{1}{2}\theta^2t^2} + 3\theta^6t^2e^{\frac{1}{2}\theta^2t^2} + 3\theta^6t^2e^{\frac{1}{2}\theta^2t^2} + \theta^8t^4e^{\frac{1}{2}\theta^2t^2}\\
+	&= 3\theta^4e^{\frac{1}{2}\theta^2t^2} + 6\theta^6t^2e^{\frac{1}{2}\theta^2t^2} + \theta^8t^4e^{\frac{1}{2}\theta^2t^2}	
+\end{align}
+Now,
+\begin{align}
+	E\brak{X^4} &= \frac{d^4M_X\brak{t}}{dt^4}|_{t=0}\\
+	&= 3\theta^4\\
+	E\brak{X^2} &= \frac{d^2M_X\brak{t}}{dt^2}|_{t=0}\\
+	&= \theta^2
+\end{align}
+\begin{align}
+	V\brak{X^2_i} &= 3\theta^4 - \brak{\theta^2}^2\\
+	&= 2\theta^4\\
+	V\brak{T} &= \frac{1}{100}\sum^{10}_{i=1}{2\theta^4}\\
+	&= \frac{1}{5}\theta^4
+\end{align}
+
+The mean square error of $cT$ as an estimator of $\theta^2$ is given by
+\begin{align}
+	f = E\brak{\brak{cT - \theta^2}^2}
+\end{align}
+Since
+\begin{align}
+	E\brak{X^2} = V\brak{X} + \brak{E\brak{X}}^2
+\end{align}
+Now,
+\begin{align}
+	f &= V\brak{cT - \theta^2} + \brak{E\brak{cT - \theta^2}^2}\\
+	&= V\brak{cT} + \brak{E\brak{cT} - \theta^2}^2\\
+	&= c^2V\brak{T} + \brak{cE\brak{T} - \theta^2}^2\\
+	&= \frac{c^2}{5}\theta^4 + \theta^4\brak{c-1}^2
+\end{align}
+Minimizing the mean square error,
+\begin{align}
+	\frac{df}{dc} &= 0\\
+	\frac{df}{dc} &= \frac{2c}{5}\theta^4 + 2\theta^4\brak{c-1}\\
+	\frac{c}{5} + c - 1 &= 0\\
+	6c &= 5\\
+	c &= \frac{5}{6}
+\end{align}
+To verify that $cT$ is a good estimate for $\theta$, let
+\begin{align}
+	\theta &= 0.5\\
+	E\brak{\brak{cT - \theta^2}^2} &= \frac{1}{5}\brak{\frac{25}{36}}\brak{0.5}^4 + \brak{\frac{-1}{6}}^2\brak{0.5}^4\\
+	&= \frac{1}{96}\\
+	&= 0.0104
+\end{align}
+The mean square error is small relative to the value of $\theta$, hence $cT$ is a good estimate.
+\\
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width = \columnwidth]{2023/ST/40/figs/fig1.png}
+\end{figure}
+\\
+Using laplace transform to find CDF,
+\begin{align}
+	M_T\brak{s} &= M_{\frac{1}{10}\sum^{10}_{i=1}{X^2_i}}\brak{s}\\
+	&= \prod^{10}_{i=1}{M_{\frac{X_i^2}{10}}\brak{s}}
+\end{align}
+Now,
+\begin{align}
+	M_{\frac{X^2}{10}}\brak{s} &= E\brak{e^{\frac{-sX^2}{10}}}\\
+	&= \int^{\infty}_{-\infty}{e^{\frac{-sx^2}{10}}\frac{e^{\frac{-x^2}{2\theta^2}}}{\theta\sqrt{2\pi}}dx}\\
+	&= \frac{1}{\theta\sqrt{2\pi}}\int^{\infty}_{-\infty}{e^{\frac{-x^2}{2}\brak{\frac{1}{\theta^2} + \frac{s}{5}}}dx}
+\end{align}
+Using the substitution,
+\begin{align}
+	u &= x\sqrt{\frac{1}{\theta^2} + \frac{s}{5}}\\
+	du &= \brak{\sqrt{\frac{1}{\theta^2} + \frac{s}{5}} }dx
+\end{align}
+\begin{align}
+	M_{\frac{X^2}{10}}\brak{s} &= \frac{1}{\theta\sqrt{\frac{1}{\theta^2} + \frac{s}{5}}}\int^{\infty}_{-\infty}{\frac{1}{\sqrt{2\pi}}e^{\frac{-u^2}{2}}du}
+\end{align}
+The integral evaluates to 1 since it is the pdf of a normal distribution,
+\begin{align}
+	M_{\frac{X^2}{10}}\brak{s} &= \frac{1}{\sqrt{1 + \frac{s\theta^2}{5}}}\\
+	M_T\brak{s} &= \frac{1}{\brak{1 + \frac{s\theta^2}{5}}^5}
+\end{align}
+Taking inverse laplace transform gives us the pdf,
+\begin{align}
+	p_T\brak{t} &= L^{-1}\sbrak{M_T\brak{s}}\\
+	&= L^{-1}\sbrak{\frac{1}{\brak{1 + \frac{s\theta^2}{5}}^5}}\\
+	&= \frac{3125 t^4e^{\frac{-5t}{\theta^2}}}{24 \theta^{10}}u\brak{t}
+\end{align}
+ROC of laplace transform:
+\begin{align}
+	Re\brak{s} > \frac{-5}{\theta^2}
+\end{align}
+CDF of T:
+\begin{align}
+	F_T\brak{t} &= \int^t_{-\infty}{p_T\brak{t}dt}\\
+	&= \int^t_{-\infty}{\frac{3125 t^4e^{\frac{-5t}{\theta^2}}}{24 \theta^{10}}u\brak{t}dt}\\
+	&= \int^t_0{\frac{3125 t^4e^{\frac{-5t}{\theta^2}}}{24 \theta^{10}}dt}
+\end{align}
+Applying integration by parts to solve the integral,
+\begin{align}
+	F_T\brak{t} &= \frac{3125}{24\theta^{10}}\brak{\frac{-\theta^2}{5}t^4e^{\frac{-5t}{\theta^2}} + \int^t_0{\frac{4\theta^2}{5}t^3e^{\frac{-5t}{\theta^2}}dt}}\\
+	&= \frac{3125}{24\theta^{10}}\brak{-e^{\frac{-5t}{\theta^2}}\brak{\frac{\theta^2}{5}t^4 + \frac{4\theta^4}{25}t^3} + \int^t_0{\frac{12\theta^4}{25}t^2e^{\frac{-5t}{\theta^2}}dt}}\\
+	&= \frac{3125}{24\theta^{10}}\brak{-e^{\frac{-5t}{\theta^2}}\brak{\frac{\theta^2}{5}t^4 + \frac{4\theta^4}{25}t^3 + \frac{12\theta^6}{125}t^2}+\int^t_0{\frac{24\theta^6}{125}te^{\frac{-5t}{\theta^2}}dt}}\\
+	&= \frac{3125}{24\theta^{10}}\brak{-e^{\frac{-5t}{\theta^2}}\brak{\frac{\theta^2}{5}t^4 + \frac{4\theta^4}{25}t^3 + \frac{12\theta^6}{125}t^2 + \frac{24\theta^8}{625}t} + \int^t_0{\frac{24\theta^8}{625}e^{\frac{-5t}{\theta^2}}dt}}\\
+	&= \frac{3125}{24\theta^{10}}\brak{-e^{\frac{-5t}{\theta^2}}\brak{\frac{\theta^2}{5}t^4 + \frac{4\theta^4}{25}t^3 + \frac{12\theta^6}{125}t^2 + \frac{24\theta^8}{625}t + \frac{24\theta^{10}}{3125}} + \frac{24\theta^{10}}{3125}}\\
+	&= 1 - \frac{e^{\frac{-5t}{\theta^2}}}{24\theta^8}\brak{625t^4 + 500\theta^2t^3 + 300\theta^4t^2 + 120\theta^6t + 24\theta^8}
+\end{align}
+Let $\theta = 0.5$ for simulation,
+\begin{align}
+	F_T\brak{t} &= 1 - \frac{e^{-20t}}{3}\brak{20000t^4 + 4000t^3 + 600t^2 + 60t + 3}
+\end{align}
+\\
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width = \columnwidth]{2023/ST/40/figs/cdf.png}
+	\caption{Theoretical CDF vs Simulation CDF}
+\end{figure}
+\\
+Simulation procedure:
+\begin{enumerate}[label = (\roman*)]
+	\item \begin{align}
+	u_1 &= (double) \frac{rand()}{RAND\_MAX} \vspace{2pt} \\
+	u_2 &= (double) \frac{rand()}{RAND\_MAX}
+	\end{align}
+	Generates a uniform distribution between 0 and 1.
+	\item \begin{align}
+	 X_i &= \sqrt{\theta^2}\brak{\sqrt{-2\log{u_1}} \cos{2\pi u_2}} + \mu
+	 \end{align}
+	 Transforms the uniform distribution into gaussian distribution of desired mean and variance. Ten such random variables are generated.
+	\item \begin{align}
+	T &= \frac{1}{10}\sum^{10}_{i=1}{X_i^2}
+	\end{align} 
+	The values of the random variables are squared and then averaged together to generate $T$.
+	\item The value of $c$ which minimizes the mean square error is found by calculating $E\brak{\brak{cT - \theta^2}^2}$ for a range of values of $c$ and choosing that value of $c$ which gives the minimum value for the expression.
+	\item The cdf is simulated by counting the number of samples less than a certain $t$ and dividing it by the total number of samples. This gives the CDF of $T$ at $t$. 
+\end{enumerate}
+
