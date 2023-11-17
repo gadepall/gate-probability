@@ -1,3 +1,4 @@
+\iffalse
 \let\negmedspace\undefined
 \let\negthickspace\undefined
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
@@ -232,7 +233,8 @@ Then which of the following is true?\\
 \item $c > 1$
 \item $X$ and $Y$ are independent
 \end{enumerate}
-\solution
+\fi
+\solution\\
 For p\brak{x,y} to be joint probability mass function
 \begin{align}
 \sum\limits^{\infty}_{y=-\infty}\sum\limits^{\infty}_{x=-\infty}p(x,y)&=1 \, \vert x \neq y\\
@@ -283,7 +285,7 @@ Simulations:
 \begin{enumerate}
 \item Marginal pmf of X
 \begin{figure}[H]
-\includegraphics[width=\columnwidth]{/home/yogitha/47.2023/figs/pmfx.png}
+\includegraphics[width=\columnwidth]{2023/ST/47/figs/pmfx.png}
 \caption{Marginal pmf}
 \label{fig:i_pmf}
 \end{figure}
@@ -295,4 +297,3 @@ Steps of simulation:
 \item Using plt.scatter function of python, plot the graph of Marginal pmf of X vs X.
 The same can be used to plot marginal pmf of Y
 \end{enumerate}
-\end{document}
