@@ -91,6 +91,35 @@
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 
+\lstset{
+    language=Python,   % Set the programming language for syntax highlighting
+    basicstyle=\ttfamily, % Set the font style for the code
+    keywordstyle=\color{blue}, % Customize keywords
+    commentstyle=\color{green}, % Customize comments
+    stringstyle=\color{red},   % Customize strings
+    numbers=left,      % Display line numbers
+    numberstyle=\tiny, % Set the style for line numbers
+    breaklines=true,   % Automatically wrap long lines
+}
+\lstset{
+    language=C,               % Set the programming language
+    basicstyle=\ttfamily,     % Font style for the code
+    keywordstyle=\color{blue}, % Keyword style
+    commentstyle=\color{green},% Comment style
+    stringstyle=\color{red},   % String style
+    numbers=left,             % Display line numbers
+    numberstyle=\tiny,        % Style for line numbers
+    breaklines=true,           % Automatically wrap long lines
+    frame=single,             % Add a frame around the code
+    showstringspaces=false,    % Don't show spaces within strings
+    tabsize=4,                % Set tab size to 4 spaces
+    morekeywords={printf, scanf, int, main, if, else, while}, % Additional keywords
+    extendedchars=true,       % Allow extended characters like underscores
+    literate={~} {$\sim$}{1}, % Replace ~ with a tilde symbol
+    backgroundcolor=\color{gray!10}, % Background color for the code
+    escapeinside={(*@}{@*)},  % Define an escape sequence for LaTeX code within comments
+}
+
 \begin{document}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\prt}[2]{\ensuremath{p_{#1}^{\left(#2\right)} }}        % own macro for this question
@@ -188,17 +217,17 @@ then which one of the following statements is true?
 \textbf{Gaussian}\\
 Q function is defined
 \begin{align}
-	\qfunc{x} &= \frac{1}{\sqrt{2\pi}}\int_{x}^{\infty} e^{\frac{-u^2}{2}} du \label{eq:15st/2023/1}
+	\qfunc{x} &= \frac{1}{\sqrt{2\pi}}\int_{x}^{\infty} e^{\frac{-u^2}{2}} du \label{eq:15st/2022/1}
 \end{align}
-From question and \eqref{eq:15st/2023/1};
+From the question and \eqref{eq:15st/2022/1};
 \begin{align}
 	F_X(x) &= 
 	\begin{cases}
         \qfunc{-x} , &  x < -1 \\
         1-\qfunc{x+1} , &  x \ge -1
-        \end{cases} \label{eq:15st/2023/2}
+        \end{cases} \label{eq:15st/2022/2}
 \end{align}
-From \eqref{eq:15st/2023/2};
+From \eqref{eq:15st/2022/2};
 \begin{enumerate}
 \item \begin{align}
 	\pr{X \le -1} = F_X(-1) &= 1 - \qfunc{0} \\
@@ -207,9 +236,9 @@ From \eqref{eq:15st/2023/2};
 So Option A i.e., $P(X < -1) = \frac{1}{2}$ is correct
 \item The pdf of X can be defined in terms of cdf as 
 \begin{align}
-	\pr{X = b} = F_X(b) - \lim_{x \to b^-}F_X(x) \label{eq:15st/2023/3}
+	\pr{X = b} = F_X(b) - \lim_{x \to b^-}F_X(x) \label{eq:15st/2022/3}
 \end{align}
-From \eqref{eq:15st/2023/3};
+From \eqref{eq:15st/2022/3};
 \begin{align}
 	\pr{X = -1} &= F_X(-1) - \lim_{x \to -1^-}F_X(x)\\
 	&= 1-\qfunc{0} - \qfunc{-(-1)}\\
@@ -229,10 +258,136 @@ So Option C i.e., $P(X < -1) = \frac{1}{2}$ is incorrect
 So Option D i.e., $P(X \leq 0) = \frac{1}{2}$ is incorrect
 \end{enumerate}
 \newpage
-Guassian CDF plot of X is given in fig\ref{fig:15st/2023}
+Guassian CDF plot of X is given in  \\
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=\columnwidth]{2023/ST/15/figs/figure1.png}
+    \includegraphics[width=\columnwidth]{2023/ST/15/figs/figure.png}
     \caption{}
-    \label{fig:15st/2023}
 \end{figure}
+\newpage
+\textbf{Box-Muller}\\
+\textbf{STATEMENT}:
+  Suppose U1 and U2 are independent samples chosen from the uniform distribution on the unit interval (0, 1). Let
+  \begin{align}
+  	Z_0 = R \cos(\Theta) =\sqrt{-2 \ln U_1} \cos(2 \pi U_2)\,
+  \end{align}
+   and
+  \begin{align}
+  	Z_1 = R \sin(\Theta) =\sqrt{-2 \ln U_1} \cos(2 \pi U_2)\, 
+  \end{align}
+  Then $Z_0$ and $Z_1$ are independent random variables with a standard normal distribution.
+  So, now we will generate $Z_0$ using C Code as given below \\
+\textbf{PROOF}:
+  Let $X$ and $Y$ be independent standard normal variables 
+  \begin{align}
+  	X,Y \sim \mathcal{N}(0,1) \quad and \quad X\perp Y
+  \end{align}
+  The joint pdf of $X$ and $Y$ is given by 
+  \begin{align}
+  	f_{XY}(X,Y) &= f(x)f(y)\\
+  	&= \frac{1}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}.\frac{1}{\sqrt{2\pi}}e^{\frac{-y^2}{2}}\\
+  	&= \frac{1}{2\pi}e^{\frac{-(x^2+y^2)}{2}}
+  \end{align}
+  The relationship between Cartesian coordinates $(x,y)$ and polar coordinates $(r,\theta)$ is as follows 
+  \begin{align}
+  	x=r\cos\theta \\
+  	y=r\sin\theta
+  \end{align}
+  Change $f_{XY}(x,y)$ to polar coordinates :
+  \begin{align}
+  	f_{XY}(x,y) dxdy = f_{R\theta}(r,\theta) drd\theta
+  \end{align}
+  i.e.,
+  \begin{align}
+  	f_{R\theta}(r,\theta) = f_{XY}(x,y) \frac{dxdy}{drd\theta}
+  	= f_{XY}(x,y) \mydet{\frac{\partial(x,y)}{\partial(r,\theta)}}
+  \end{align}
+  where J is the Jacobian 
+  \begin{align}
+  	J &= \mydet{\frac{\partial x}{\partial r} \,\, \frac{\partial x}{\partial \theta}\\\frac{\partial y}{\partial r} \,\, \frac{\partial y}{\partial \theta}}\\
+  	&= \mydet{\cos\theta \,\, -r\sin\theta \\ \sin\theta \,\, r\cos\theta} = r
+  \end{align}
+  For $r\ge$ 0 and $\theta \in [0,2\pi)$, we have 
+  \begin{align}
+  	f_{R\theta}(r,\theta) drd\theta = \frac{1}{2\pi}e^{\frac{-(r^2)}{2}}rdrd\theta
+  \end{align}
+  Now we change the variable from $(r,\theta)$ to $(r^2,\theta)$;
+  \begin{align}
+  	rdr = \frac{1}{2}dr^2
+  \end{align}
+  Now it can be written as, 
+  \begin{align}
+  	f_{R\theta}(r,\theta)drd\theta &= f_{R^2\theta}(r^2,\theta)dr^2d\theta\\
+  	&= \frac{1}{2\pi}e^{\frac{-(r^2)}{2}}\frac{1}{2}dr^2d\theta\\
+  	&= \brak{\frac{1}{2}e^{\frac{-(r^2)}{2}}dr^2}\brak{\frac{1}{2}d\theta}\\
+  	&= f_{R^2}(r^2)dr^2 f_{\theta}(\theta)d\theta
+  \end{align}
+  from the above equation, we can say that 
+  \begin{align}
+        R^2\perp\theta \,\, (i.e., R^2 \text{ and } \theta \text{ are independent})
+  \end{align}
+  Generate, $\theta \sim Unif(0,2\pi)$ 
+  Generate, $V \sim Exp(\lambda = \frac{1}{2})$ (i.e., $V = R^2$) and compute 
+  \begin{align}
+        R=\sqrt{V}
+  \end{align}
+  Compute 
+  \begin{align}
+        X = R\cos\theta\\
+        Y = R\sin\theta\\
+  \end{align}
+  where, $X,Y$ are i.i.d in $\sim \mathcal{N}(0,1)$
+  Then  
+  \begin{align}
+        \theta &= 2\pi U_1\\
+        V &= -2log(U_2)
+  \end{align}
+  We can prove $V = -2log(U_2)$ using the c.d.f definition of the exponential distribution\\
+  Let $X$ be a random variable following an exponential distribution with rate parameter $\lambda = \frac{1}{2}$, denoted as $X \sim \text{Exp}\brak{\frac{1}{2}}$. The cumulative distribution function (CDF) of the exponential distribution is given by:
+\begin{align}
+F(x) &= 1 - e^{-\frac{x}{2}}
+\end{align}
+Now, suppose we have a random variable $U$ following a uniform distribution in the interval $[0, 1]$, denoted as $U \sim \text{U}(0, 1)$. The CDF of the uniform distribution is simply:
+\begin{align}
+F_U(u) &= u, \text{ for } 0 \leq u \leq 1
+\end{align}
+We can use the probability integral transform to express the exponential random variable $X$ in terms of the uniform random variable $U$:
+\begin{align}
+F(x) &= F_U(u) \\
+1 - e^{-\frac{x}{2}} &= u
+\end{align}
+Now, solve for $x$:
+\begin{align}
+e^{-\frac{x}{2}} &= 1 - u \\
+-\frac{x}{2} &= \ln(1 - u) \\
+x &= -2 \ln(1 - u)
+\end{align}
+So, $X \sim -2 \ln(1 - U)$ for $U \sim \text{U}(0, 1)$. This expression represents the exponential random variable $X$ in terms of a uniform random variable $U$.\\
+C and Python codes are given below :
+  \lstinputlisting[language=C]{2023/ST/15/codes/rand.c}
+  \lstinputlisting[language=Python]{2023/ST/15/codes/rand.py}
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\columnwidth]{2023/ST/15/figs/figure1.png}  % Replace 'image_filename' with your image file name
+  \caption{Histogram plot of density of $Z_0$}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
